@@ -1,0 +1,2 @@
+# Officiant_Ceremony_Scripting_Service
+Automated website repository for Officiant_Ceremony_Scripting_Service
