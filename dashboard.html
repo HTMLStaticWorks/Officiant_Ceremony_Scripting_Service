@@ -91,7 +91,7 @@
         #sidebar {
             transition: transform 0.3s ease-in-out;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1023px) {
             #sidebar {
                 transform: translateX(-100%);
             }
@@ -123,7 +123,7 @@
       EverVow
      </span>
     </a>
-    <button class="lg:hidden text-gray-500 hover:text-gray-900 dark:hover:text-white" id="close-sidebar">
+    <button class="lg:hidden text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" id="close-sidebar">
      <i data-lucide="x">
      </i>
     </button>
@@ -204,22 +204,22 @@
   <!-- Main Content Area -->
   <div class="flex-1 flex flex-col h-full overflow-hidden w-full relative">
    <!-- Top Header -->
-   <header class="h-20 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-4 sm:px-6 lg:px-8 flex-shrink-0">
-    <div class="flex items-center gap-4">
-     <button class="lg:hidden text-gray-500 hover:text-gray-900 dark:hover:text-white" id="open-sidebar">
+   <header class="h-20 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-3 sm:px-6 lg:px-8 flex-shrink-0">
+    <div class="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+     <button class="lg:hidden text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" id="open-sidebar">
       <i class="w-6 h-6" data-lucide="menu">
       </i>
      </button>
-     <h2 class="text-xl font-serif text-gray-900 dark:text-white" id="page-title">
+     <h2 class="text-lg sm:text-xl font-serif text-gray-900 dark:text-white truncate" id="page-title">
       Dashboard Overview
      </h2>
     </div>
-    <div class="flex items-center gap-4">
-     <button class="theme-toggle p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+    <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+     <button class="theme-toggle p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
       <i class="w-5 h-5" data-lucide="moon">
       </i>
      </button>
-     <button class="rtl-toggle text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+     <button class="rtl-toggle text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
       <i class="w-5 h-5" data-lucide="arrow-left-right">
       </i>
      </button>
@@ -232,11 +232,11 @@
    <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 relative">
     <!-- OVERVIEW TAB -->
     <div class="dashboard-tab active" data-aos="fade-in" id="tab-overview">
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
       <div class="card p-6 border-l-4 border-l-brand-primary">
        <div class="flex justify-between items-start">
         <div>
-         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400 mb-1">
           Days Until Wedding
          </p>
          <h3 class="text-3xl font-serif text-gray-900 dark:text-white">
@@ -252,7 +252,7 @@
       <div class="card p-6">
        <div class="flex justify-between items-start">
         <div>
-         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400 mb-1">
           Script Status
          </p>
          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-2">
@@ -268,7 +268,7 @@
       <div class="card p-6">
        <div class="flex justify-between items-start">
         <div>
-         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400 mb-1">
           Assigned Officiant
          </p>
          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-2">
@@ -284,7 +284,7 @@
       <div class="card p-6">
        <div class="flex justify-between items-start">
         <div>
-         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400 mb-1">
           Balance Due
          </p>
          <h3 class="text-3xl font-serif text-gray-900 dark:text-white">
@@ -299,7 +299,7 @@
       </div>
      </div>
      <div class="gap-8 flex flex-wrap justify-center">
-      <div class="lg:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+      <div class="xl:col-span-2 w-full md:w-[calc(50%-1rem)] xl:w-[calc(33.333%-1.5rem)]">
        <div class="card p-6 mb-8">
         <h3 class="font-serif text-xl text-gray-900 dark:text-white mb-4">
          Next Steps
@@ -313,7 +313,7 @@
            <h4 class="font-medium text-gray-900 dark:text-white line-through">
             Complete discovery questionnaire
            </h4>
-           <p class="text-sm text-gray-500">
+           <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">
             Completed on Jan 14, 2026
            </p>
           </div>
@@ -342,7 +342,7 @@
            <h4 class="font-medium text-gray-900 dark:text-white">
             Schedule Rehearsal Time
            </h4>
-           <p class="text-sm text-gray-500">
+           <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">
             Unlocks after script approval
            </p>
           </div>
@@ -350,7 +350,7 @@
         </div>
        </div>
       </div>
-      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+      <div class="w-full md:w-[calc(50%-1rem)] xl:w-[calc(33.333%-1.5rem)]">
        <div class="card p-6 h-full">
         <h3 class="font-serif text-xl text-gray-900 dark:text-white mb-4">
          Recent Messages
@@ -363,7 +363,7 @@
             <h4 class="text-sm font-medium text-gray-900 dark:text-white">
              Sarah Jenkins
             </h4>
-            <span class="text-xs text-gray-500">
+            <span class="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-400">
              2h ago
             </span>
            </div>
@@ -373,7 +373,7 @@
           </div>
          </div>
          <div class="flex gap-3">
-          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500">
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 dark:text-gray-400">
            <i data-lucide="bell">
            </i>
           </div>
@@ -382,7 +382,7 @@
             <h4 class="text-sm font-medium text-gray-900 dark:text-white">
              System
             </h4>
-            <span class="text-xs text-gray-500">
+            <span class="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-400">
              Yesterday
             </span>
            </div>
@@ -397,25 +397,25 @@
      </div>
     </div>
     <!-- COLLABORATION TAB (Document Editor Feel) -->
-    <div class="dashboard-tab h-full" data-aos="fade-in" id="tab-collaboration">
-     <div class="flex flex-col lg:flex-row gap-6 h-full min-h-[70vh]">
+    <div class="dashboard-tab xl:h-full" data-aos="fade-in" id="tab-collaboration">
+     <div class="flex flex-col xl:flex-row gap-6 xl:h-full min-h-[70vh]">
       <!-- Editor Area -->
-      <div class="w-full lg:w-2/3 card flex flex-col overflow-hidden">
+      <div class="w-full xl:w-2/3 card flex flex-col overflow-hidden h-[60vh] xl:h-auto">
        <div class="bg-gray-50 dark:bg-gray-900 p-4 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
          <span class="bg-brand-secondary text-white text-xs px-2 py-1 rounded">
           Draft v1.2
          </span>
-         <span class="text-sm text-gray-500">
+         <span class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">
           Last edited 2 hours ago by Sarah
          </span>
         </div>
         <div class="flex flex-wrap gap-2 w-full sm:w-auto justify-start sm:justify-end mt-2 sm:mt-0">
-         <button class="p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+         <button class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
           <i class="w-4 h-4" data-lucide="save">
           </i>
          </button>
-         <button class="p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+         <button class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
           <i class="w-4 h-4" data-lucide="download">
           </i>
          </button>
@@ -424,7 +424,7 @@
          </button>
         </div>
        </div>
-       <div class="p-8 md:p-12 overflow-y-auto bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-serif leading-loose" style="background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');">
+       <div class="p-8 md:p-12 overflow-y-auto bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-serif leading-loose flex-1" style="background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');">
         <h1 class="text-center text-2xl font-bold mb-8">
          The Wedding Ceremony of
          <br/>
@@ -463,8 +463,8 @@
        </div>
       </div>
       <!-- Comments Sidebar -->
-      <div class="w-full lg:w-1/3 flex flex-col gap-4">
-       <div class="card p-4 h-full flex flex-col">
+      <div class="w-full xl:w-1/3 flex flex-col gap-4">
+       <div class="card p-4 h-[50vh] xl:h-full flex flex-col">
         <h3 class="font-serif text-lg text-gray-900 dark:text-white mb-4 flex justify-between items-center">
          Comments
          <span class="bg-gray-100 dark:bg-gray-700 text-xs px-2 py-1 rounded-full">
@@ -474,7 +474,7 @@
         <div class="flex-1 overflow-y-auto space-y-4">
          <!-- Comment Thread -->
          <div class="border border-yellow-200 dark:border-yellow-900 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg p-4">
-          <div class="text-xs text-gray-500 mb-2 italic">
+          <div class="text-xs text-gray-500 dark:text-gray-400 mb-2 italic">
            Refers to: "...spilling a large iced latte..."
           </div>
           <div class="flex gap-3 items-start mb-3">
@@ -533,7 +533,8 @@
        Invoice History
       </h3>
       <div class="card overflow-hidden">
-       <table class="w-full text-left text-sm text-gray-600 dark:text-gray-400">
+       <div class="overflow-x-auto w-full">
+        <table class="w-full text-left text-sm text-gray-600 dark:text-gray-400 min-w-[600px] whitespace-nowrap">
         <thead class="bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 uppercase">
          <tr>
           <th class="px-6 py-4">
@@ -607,6 +608,7 @@
          </tr>
         </tbody>
        </table>
+       </div>
       </div>
      </div>
     </div>
@@ -618,7 +620,7 @@
       <h3 class="text-2xl font-serif mb-2">
        Consultation Completed
       </h3>
-      <p class="text-gray-500 mb-6">
+      <p class="text-gray-500 dark:text-gray-400 mb-6">
        Your discovery call took place on Jan 14, 2026. You can review your notes or book an additional ad-hoc consultation.
       </p>
       <button class="btn-secondary">
@@ -631,7 +633,7 @@
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
        <div>
         <h3 class="text-2xl font-serif text-gray-900 dark:text-white">Your Ceremony Script</h3>
-        <p class="text-sm text-gray-500">Current version: Draft v1.2 (Updated 2 hours ago)</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">Current version: Draft v1.2 (Updated 2 hours ago)</p>
        </div>
        <div class="flex gap-3">
         <button class="btn-secondary text-sm px-4 py-2" onclick="switchTab('collaboration')">
@@ -652,28 +654,28 @@
            <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">1</div>
            <div>
             <h5 class="font-medium text-gray-900 dark:text-white">The Welcome</h5>
-            <p class="text-sm text-gray-500 mt-1">Opening remarks and greeting to family and friends.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Opening remarks and greeting to family and friends.</p>
            </div>
           </div>
           <div class="flex items-start gap-4">
            <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">2</div>
            <div>
             <h5 class="font-medium text-gray-900 dark:text-white">The Love Story</h5>
-            <p class="text-sm text-gray-500 mt-1">A personalized narrative of how Chloe and Mark met and their journey together.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">A personalized narrative of how Chloe and Mark met and their journey together.</p>
            </div>
           </div>
           <div class="flex items-start gap-4">
            <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">3</div>
            <div>
             <h5 class="font-medium text-gray-900 dark:text-white">Reading: "The Art of Marriage"</h5>
-            <p class="text-sm text-gray-500 mt-1">To be read by Mark's sister, Emily.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">To be read by Mark's sister, Emily.</p>
            </div>
           </div>
           <div class="flex items-start gap-4">
            <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">4</div>
            <div>
             <h5 class="font-medium text-gray-900 dark:text-white">The Vows</h5>
-            <p class="text-sm text-gray-500 mt-1">Traditional exchange of vows followed by personal promises.</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Traditional exchange of vows followed by personal promises.</p>
            </div>
           </div>
          </div>
@@ -685,19 +687,19 @@
          <h4 class="font-serif text-lg mb-4 text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-700 pb-2">Details</h4>
          <ul class="space-y-3 text-sm">
           <li class="flex justify-between">
-           <span class="text-gray-500">Status</span>
+           <span class="text-gray-500 dark:text-gray-400 dark:text-gray-400">Status</span>
            <span class="font-medium text-blue-600 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-0.5 rounded">In Review</span>
           </li>
           <li class="flex justify-between">
-           <span class="text-gray-500">Est. Length</span>
+           <span class="text-gray-500 dark:text-gray-400 dark:text-gray-400">Est. Length</span>
            <span class="font-medium text-gray-900 dark:text-white">20-25 mins</span>
           </li>
           <li class="flex justify-between">
-           <span class="text-gray-500">Word Count</span>
+           <span class="text-gray-500 dark:text-gray-400 dark:text-gray-400">Word Count</span>
            <span class="font-medium text-gray-900 dark:text-white">1,450</span>
           </li>
           <li class="flex justify-between">
-           <span class="text-gray-500">Last Edited</span>
+           <span class="text-gray-500 dark:text-gray-400 dark:text-gray-400">Last Edited</span>
            <span class="font-medium text-gray-900 dark:text-white">2 hours ago</span>
           </li>
          </ul>
@@ -719,7 +721,7 @@
       <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 mb-6 text-sm text-yellow-800 dark:text-yellow-200">
        Please approve the final ceremony script before scheduling your rehearsal.
       </div>
-      <button class="w-full py-3 bg-gray-200 dark:bg-gray-700 text-gray-500 cursor-not-allowed rounded" disabled="">
+      <button class="w-full py-3 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed rounded" disabled="">
        Select Date
       </button>
      </div>
@@ -732,7 +734,7 @@
        </h3>
        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-         <p class="text-sm text-gray-500 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
           Wedding Date &amp; Time
          </p>
          <p class="font-medium text-gray-900 dark:text-white">
@@ -740,7 +742,7 @@
          </p>
         </div>
         <div>
-         <p class="text-sm text-gray-500 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
           Venue
          </p>
          <p class="font-medium text-gray-900 dark:text-white">
@@ -750,7 +752,7 @@
          </p>
         </div>
         <div>
-         <p class="text-sm text-gray-500 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
           Estimated Guest Count
          </p>
          <p class="font-medium text-gray-900 dark:text-white">
@@ -758,7 +760,7 @@
          </p>
         </div>
         <div>
-         <p class="text-sm text-gray-500 mb-1">
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
           Wedding Party Size
          </p>
          <p class="font-medium text-gray-900 dark:text-white">
@@ -780,7 +782,7 @@
        <h3 class="font-serif text-lg text-gray-900 dark:text-white">
         Messages with Sarah
        </h3>
-       <span class="text-xs text-gray-500">
+       <span class="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-400">
         Typically replies within 24 hours
        </span>
       </div>
@@ -824,7 +826,7 @@
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
        <div class="card p-6 flex items-center justify-between hover:border-brand-primary transition-colors cursor-pointer group">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
          <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
           <i data-lucide="file-text">
           </i>
@@ -833,7 +835,7 @@
           <h4 class="font-medium text-gray-900 dark:text-white">
            Service Contract
           </h4>
-          <p class="text-xs text-gray-500 mt-1">
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
            Signed on Jan 10, 2026
           </p>
          </div>
@@ -842,7 +844,7 @@
         </i>
        </div>
        <div class="card p-6 flex items-center justify-between hover:border-brand-primary transition-colors cursor-pointer group">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
          <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center group-hover:bg-green-100 transition-colors">
           <i data-lucide="check-circle">
           </i>
@@ -851,7 +853,7 @@
           <h4 class="font-medium text-gray-900 dark:text-white">
            Discovery Questionnaire
           </h4>
-          <p class="text-xs text-gray-500 mt-1">
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
            Completed
           </p>
          </div>
@@ -860,7 +862,7 @@
         </i>
        </div>
        <div class="card p-6 flex items-center justify-between hover:border-brand-primary transition-colors cursor-pointer group">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
          <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
           <i data-lucide="file-badge-2">
           </i>
@@ -869,7 +871,7 @@
           <h4 class="font-medium text-gray-900 dark:text-white">
            Marriage License Guide
           </h4>
-          <p class="text-xs text-gray-500 mt-1">
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
            PDF Reference Guide
           </p>
          </div>
@@ -895,7 +897,7 @@
          <h3 class="text-2xl font-serif text-gray-900 dark:text-white">
           Chloe &amp; Mark
          </h3>
-         <p class="text-gray-500">
+         <p class="text-gray-500 dark:text-gray-400 dark:text-gray-400">
           Member since Jan 2026
          </p>
         </div>
@@ -1065,5 +1067,6 @@
   </script>
  </body>
 </html>
+
 
 

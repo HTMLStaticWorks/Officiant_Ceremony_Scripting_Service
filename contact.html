@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="scroll-smooth overflow-x-hidden" lang="en">
  <head>
   <meta charset="utf-8"/>
@@ -97,7 +97,7 @@
        EverVow
       </span>
      </a>
-     <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse items-center">
+     <nav class="hidden xl:flex space-x-8 rtl:space-x-reverse items-center">
       <a class="nav-link" href="index.html">
        Home 1
       </a>
@@ -122,8 +122,11 @@
       <a class="nav-link text-brand-primary dark:text-white" href="contact.html">
        Contact
       </a>
+      <a class="nav-link" href="dashboard.html">
+       Dashboard
+      </a>
      </nav>
-     <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+     <div class="hidden xl:flex items-center space-x-4 rtl:space-x-reverse">
       <button class="theme-toggle p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
        <i class="w-5 h-5" data-lucide="moon">
        </i>
@@ -136,20 +139,25 @@
        Signup
       </a>
      </div>
-     <div class="flex lg:hidden items-center gap-4">
-      <button class="theme-toggle p-2">
-       <i class="w-5 h-5" data-lucide="moon">
-       </i>
-      </button>
-      <button class="text-gray-500 hover:text-gray-900" id="mobile-menu-btn">
-       <i class="w-6 h-6" data-lucide="menu">
-       </i>
-      </button>
+           <div class="flex xl:hidden items-center gap-4">
+       <button aria-label="Toggle RTL" class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <i class="w-5 h-5" data-lucide="arrow-left-right">
+        </i>
+       </button>
+       <button aria-label="Toggle Dark Mode" class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <i class="w-5 h-5" data-lucide="moon">
+        </i>
+       </button>
+       <button aria-expanded="false" class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none" id="mobile-menu-btn">
+        <i class="w-6 h-6" data-lucide="menu">
+        </i>
+       </button>
+      </div>
      </div>
     </div>
-   </div>
    <!-- Mobile Menu -->
-   <div class="hidden lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" id="mobile-menu">
+         <!-- Mobile Menu -->
+   <div class="hidden xl:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
      <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="index.html">
       Home 1
@@ -339,7 +347,7 @@
      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
       <!-- FAQ 1 -->
       <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-       <button class="w-full flex justify-between items-center p-6 bg-theme-bg dark:bg-gray-900 text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">
+       <button class="w-full flex justify-between items-center p-6 bg-theme-bg dark:bg-gray-900 text-start gap-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">
         <span class="font-medium text-gray-900 dark:text-white">
          Do you travel for weddings?
         </span>
@@ -352,7 +360,7 @@
       </div>
       <!-- FAQ 2 -->
       <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-       <button class="w-full flex justify-between items-center p-6 bg-theme-bg dark:bg-gray-900 text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">
+       <button class="w-full flex justify-between items-center p-6 bg-theme-bg dark:bg-gray-900 text-start gap-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">
         <span class="font-medium text-gray-900 dark:text-white">
          How far in advance should we book?
         </span>
@@ -365,7 +373,7 @@
       </div>
       <!-- FAQ 3 -->
       <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-       <button class="w-full flex justify-between items-center p-6 bg-theme-bg dark:bg-gray-900 text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">
+       <button class="w-full flex justify-between items-center p-6 bg-theme-bg dark:bg-gray-900 text-start gap-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">
         <span class="font-medium text-gray-900 dark:text-white">
          Do you help with the marriage license?
         </span>
@@ -396,7 +404,7 @@
        Premium officiant and ceremony scripting services crafting personalized, elegant, and unforgettable wedding ceremonies.
       </p>
       <div class="flex gap-4">
-       <a aria-label="Instagram" class="text-gray-400 hover:text-brand-primary" href="#">
+       <a aria-label="Instagram" class="text-[#E1306C] hover:opacity-80 transition-colors" href="#">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
          <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
          </rect>
@@ -406,13 +414,13 @@
          </line>
         </svg>
        </a>
-       <a aria-label="Facebook" class="text-gray-400 hover:text-brand-primary" href="#">
+       <a aria-label="Facebook" class="text-[#1877F2] hover:opacity-80 transition-colors" href="#">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
          </path>
         </svg>
        </a>
-       <a aria-label="YouTube" class="text-gray-400 hover:text-brand-primary" href="#">
+       <a aria-label="YouTube" class="text-[#FF0000] hover:opacity-80 transition-colors" href="#">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
          </path>
@@ -501,7 +509,7 @@
     </div>
     <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
      <p>
-      © 2026 EverVow Officiant Services. All rights reserved.
+      Â© 2026 EverVow Officiant Services. All rights reserved.
      </p>
      <div class="flex gap-4 items-center">
       <a class="hover:text-brand-primary" href="#">
@@ -525,3 +533,4 @@
   </script>
  </body>
 </html>
+
