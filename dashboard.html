@@ -1,0 +1,1069 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth overflow-x-hidden" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Couple Dashboard | EverVow Officiant Services
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <script src="https://unpkg.com/lucide@latest">
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script>
+   tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { light: '#D4C5B9', DEFAULT: '#8A7B6E', dark: '#5A4E45', primary: '#2C3E35', secondary: '#D4AF37' },
+                        theme: { bg: '#FAF9F6', darkBg: '#121212' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+  </script>
+  <style type="text/tailwindcss">
+   @layer base {
+
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased text-gray-800 bg-theme-bg transition-colors duration-300;
+  }
+  
+  html.dark {
+    @apply text-gray-100;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+  [dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+        }
+        @layer components {
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wide text-white transition-all duration-300 bg-brand-primary rounded-md hover:bg-brand-dark hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300 border border-brand-primary text-brand-primary rounded-md hover:bg-brand-primary hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary dark:border-brand-light dark:text-brand-light dark:hover:bg-brand-light dark:hover:text-gray-900;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium transition-colors hover:text-brand-primary dark:text-gray-300 dark:hover:text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-brand-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+        }
+
+        @layer utilities {
+            .bg-theme-bg { background-color: theme('colors.theme.bg'); }
+            .dark .bg-theme-bg { background-color: theme('colors.theme.darkBg'); }
+        }
+        .dashboard-tab {
+            display: none;
+        }
+        .dashboard-tab.active {
+            display: block;
+        }
+        /* Mobile sidebar transition */
+        #sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 1024px) {
+            #sidebar {
+                transform: translateX(-100%);
+            }
+            #sidebar.open {
+                transform: translateX(0);
+            }
+            [dir="rtl"] #sidebar {
+                transform: translateX(100%);
+            }
+            [dir="rtl"] #sidebar.open {
+                transform: translateX(0);
+            }
+        }
+  </style>
+  <link href="../assets/css/style.css" rel="stylesheet"/>
+  <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+ </head>
+ <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 antialiased h-screen overflow-hidden flex overflow-x-hidden">
+  <!-- Mobile Sidebar Overlay -->
+  <div class="fixed inset-0 bg-gray-900/50 z-40 lg:hidden hidden" id="sidebar-overlay">
+  </div>
+  <!-- Sidebar -->
+  <aside class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-50 w-72 bg-white dark:bg-gray-800 border-r rtl:border-r-0 rtl:border-l border-gray-200 dark:border-gray-700 h-full flex flex-col lg:relative" id="sidebar">
+   <div class="h-20 flex items-center px-6 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 justify-between">
+    <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity" href="../index.html">
+     <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
+     </i>
+     <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      EverVow
+     </span>
+    </a>
+    <button class="lg:hidden text-gray-500 hover:text-gray-900 dark:hover:text-white" id="close-sidebar">
+     <i data-lucide="x">
+     </i>
+    </button>
+   </div>
+   <div class="flex-1 overflow-y-auto py-6 px-4 space-y-1">
+    <!-- Sidebar Nav Items -->
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-brand-primary dark:text-brand-light bg-brand-primary/10 dark:bg-brand-primary/20" data-target="overview">
+     <i class="w-5 h-5" data-lucide="layout-dashboard">
+     </i>
+     Overview
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="consultation">
+     <i class="w-5 h-5" data-lucide="calendar">
+     </i>
+     Consultation
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="script">
+     <i class="w-5 h-5" data-lucide="file-text">
+     </i>
+     Ceremony Script
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="collaboration">
+     <i class="w-5 h-5" data-lucide="message-square-dashed">
+     </i>
+     Script Collaboration
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="rehearsal">
+     <i class="w-5 h-5" data-lucide="users">
+     </i>
+     Rehearsal Schedule
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="details">
+     <i class="w-5 h-5" data-lucide="info">
+     </i>
+     Ceremony Details
+    </button>
+    <button class="nav-item w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="messages">
+     <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+      <i class="w-5 h-5" data-lucide="mail">
+      </i>
+      Messages
+     </div>
+     <span class="bg-brand-secondary text-white text-xs px-2 py-0.5 rounded-full">
+      2
+     </span>
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="payments">
+     <i class="w-5 h-5" data-lucide="credit-card">
+     </i>
+     Payments
+    </button>
+    <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="documents">
+     <i class="w-5 h-5" data-lucide="folder-open">
+     </i>
+     Documents
+    </button>
+    <div class="pt-6 mt-6 border-t border-gray-200 dark:border-gray-700">
+     <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="profile">
+      <i class="w-5 h-5" data-lucide="user">
+      </i>
+      Profile
+     </button>
+     <button class="nav-item w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors" data-target="settings">
+      <i class="w-5 h-5" data-lucide="settings">
+      </i>
+      Settings
+     </button>
+    </div>
+   </div>
+   <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+    <a class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" href="../index.html">
+     <i class="w-5 h-5" data-lucide="log-out">
+     </i>
+     Logout
+    </a>
+   </div>
+  </aside>
+  <!-- Main Content Area -->
+  <div class="flex-1 flex flex-col h-full overflow-hidden w-full relative">
+   <!-- Top Header -->
+   <header class="h-20 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-4 sm:px-6 lg:px-8 flex-shrink-0">
+    <div class="flex items-center gap-4">
+     <button class="lg:hidden text-gray-500 hover:text-gray-900 dark:hover:text-white" id="open-sidebar">
+      <i class="w-6 h-6" data-lucide="menu">
+      </i>
+     </button>
+     <h2 class="text-xl font-serif text-gray-900 dark:text-white" id="page-title">
+      Dashboard Overview
+     </h2>
+    </div>
+    <div class="flex items-center gap-4">
+     <button class="theme-toggle p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+      <i class="w-5 h-5" data-lucide="moon">
+      </i>
+     </button>
+     <button class="rtl-toggle text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+      <i class="w-5 h-5" data-lucide="arrow-left-right">
+      </i>
+     </button>
+     <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-primary">
+      <img alt="Couple Avatar" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&amp;fit=crop&amp;w=100&amp;q=80"/>
+     </div>
+    </div>
+   </header>
+   <!-- Dynamic Content Area -->
+   <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 relative">
+    <!-- OVERVIEW TAB -->
+    <div class="dashboard-tab active" data-aos="fade-in" id="tab-overview">
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="card p-6 border-l-4 border-l-brand-primary">
+       <div class="flex justify-between items-start">
+        <div>
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+          Days Until Wedding
+         </p>
+         <h3 class="text-3xl font-serif text-gray-900 dark:text-white">
+          214
+         </h3>
+        </div>
+        <div class="p-2 bg-brand-primary/10 rounded-lg text-brand-primary">
+         <i data-lucide="calendar-heart">
+         </i>
+        </div>
+       </div>
+      </div>
+      <div class="card p-6">
+       <div class="flex justify-between items-start">
+        <div>
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+          Script Status
+         </p>
+         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-2">
+          Drafting
+         </h3>
+        </div>
+        <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+         <i data-lucide="file-edit">
+         </i>
+        </div>
+       </div>
+      </div>
+      <div class="card p-6">
+       <div class="flex justify-between items-start">
+        <div>
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+          Assigned Officiant
+         </p>
+         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-2">
+          Sarah Jenkins
+         </h3>
+        </div>
+        <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600 dark:text-purple-400">
+         <i data-lucide="user">
+         </i>
+        </div>
+       </div>
+      </div>
+      <div class="card p-6">
+       <div class="flex justify-between items-start">
+        <div>
+         <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">
+          Balance Due
+         </p>
+         <h3 class="text-3xl font-serif text-gray-900 dark:text-white">
+          $600
+         </h3>
+        </div>
+        <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
+         <i data-lucide="dollar-sign">
+         </i>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="gap-8 flex flex-wrap justify-center">
+      <div class="lg:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+       <div class="card p-6 mb-8">
+        <h3 class="font-serif text-xl text-gray-900 dark:text-white mb-4">
+         Next Steps
+        </h3>
+        <div class="space-y-4">
+         <div class="flex gap-4 items-start p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
+          <div class="mt-1">
+           <input checked="" class="h-5 w-5 rounded text-brand-primary border-gray-300" type="checkbox"/>
+          </div>
+          <div>
+           <h4 class="font-medium text-gray-900 dark:text-white line-through">
+            Complete discovery questionnaire
+           </h4>
+           <p class="text-sm text-gray-500">
+            Completed on Jan 14, 2026
+           </p>
+          </div>
+         </div>
+         <div class="flex gap-4 items-start p-4 rounded-lg border border-brand-primary bg-brand-primary/5">
+          <div class="mt-1">
+           <input class="h-5 w-5 rounded text-brand-primary border-gray-300" type="checkbox"/>
+          </div>
+          <div>
+           <h4 class="font-medium text-brand-primary dark:text-brand-light">
+            Review First Draft of Script
+           </h4>
+           <p class="text-sm text-gray-600 dark:text-gray-400">
+            Sarah has uploaded the first draft. Please review and leave comments by next week.
+           </p>
+           <button class="mt-2 text-sm btn-primary py-1 px-4" onclick="switchTab('collaboration')">
+            Go to Script
+           </button>
+          </div>
+         </div>
+         <div class="flex gap-4 items-start p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
+          <div class="mt-1">
+           <input class="h-5 w-5 rounded text-gray-300 border-gray-300" disabled="" type="checkbox"/>
+          </div>
+          <div>
+           <h4 class="font-medium text-gray-900 dark:text-white">
+            Schedule Rehearsal Time
+           </h4>
+           <p class="text-sm text-gray-500">
+            Unlocks after script approval
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+       <div class="card p-6 h-full">
+        <h3 class="font-serif text-xl text-gray-900 dark:text-white mb-4">
+         Recent Messages
+        </h3>
+        <div class="space-y-4">
+         <div class="flex gap-3 border-b border-gray-100 dark:border-gray-700 pb-4">
+          <img alt="Sarah" class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=100&amp;q=80"/>
+          <div>
+           <div class="flex justify-between">
+            <h4 class="text-sm font-medium text-gray-900 dark:text-white">
+             Sarah Jenkins
+            </h4>
+            <span class="text-xs text-gray-500">
+             2h ago
+            </span>
+           </div>
+           <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+            Hi guys! I've just uploaded the first draft of the script to the portal. I really loved incorporating the story about the coffee shop...
+           </p>
+          </div>
+         </div>
+         <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500">
+           <i data-lucide="bell">
+           </i>
+          </div>
+          <div>
+           <div class="flex justify-between">
+            <h4 class="text-sm font-medium text-gray-900 dark:text-white">
+             System
+            </h4>
+            <span class="text-xs text-gray-500">
+             Yesterday
+            </span>
+           </div>
+           <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Your payment of $600 has been successfully processed.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- COLLABORATION TAB (Document Editor Feel) -->
+    <div class="dashboard-tab h-full" data-aos="fade-in" id="tab-collaboration">
+     <div class="flex flex-col lg:flex-row gap-6 h-full min-h-[70vh]">
+      <!-- Editor Area -->
+      <div class="w-full lg:w-2/3 card flex flex-col overflow-hidden">
+       <div class="bg-gray-50 dark:bg-gray-900 p-4 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+         <span class="bg-brand-secondary text-white text-xs px-2 py-1 rounded">
+          Draft v1.2
+         </span>
+         <span class="text-sm text-gray-500">
+          Last edited 2 hours ago by Sarah
+         </span>
+        </div>
+        <div class="flex flex-wrap gap-2 w-full sm:w-auto justify-start sm:justify-end mt-2 sm:mt-0">
+         <button class="p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+          <i class="w-4 h-4" data-lucide="save">
+          </i>
+         </button>
+         <button class="p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">
+          <i class="w-4 h-4" data-lucide="download">
+          </i>
+         </button>
+         <button class="btn-primary text-xs py-1.5 px-3">
+          Approve Script
+         </button>
+        </div>
+       </div>
+       <div class="p-8 md:p-12 overflow-y-auto bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-serif leading-loose" style="background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');">
+        <h1 class="text-center text-2xl font-bold mb-8">
+         The Wedding Ceremony of
+         <br/>
+         Chloe &amp; Mark
+        </h1>
+        <h3 class="text-xl font-bold mt-8 mb-4 border-b border-gray-200 pb-2">
+         I. The Welcome
+        </h3>
+        <p class="mb-4 text-justify relative group">
+         "Welcome, family and friends. We are gathered here today to celebrate one of life's greatest moments, to give recognition to the worth and beauty of love, and to add our best wishes to the words which shall unite Chloe and Mark in marriage."
+         <!-- Add comment button overlay on hover -->
+         <button class="absolute -right-12 top-0 opacity-0 group-hover:opacity-100 p-1.5 bg-brand-primary text-white rounded shadow-lg transition-opacity">
+          <i class="w-4 h-4" data-lucide="message-square-plus">
+          </i>
+         </button>
+        </p>
+        <h3 class="text-xl font-bold mt-8 mb-4 border-b border-gray-200 pb-2">
+         II. The Love Story
+        </h3>
+        <p class="mb-4 text-justify relative group">
+         <span class="bg-yellow-100 dark:bg-yellow-900/50 cursor-pointer border-b-2 border-yellow-400">
+          "Now, depending on who you ask, the story of how these two met varies wildly. If you ask Mark, it was a sophisticated intellectual debate at a local coffee shop. If you ask Chloe... it involved Mark spilling a large iced latte entirely down the front of his own shirt."
+         </span>
+         <button class="absolute -right-12 top-0 opacity-0 group-hover:opacity-100 p-1.5 bg-brand-primary text-white rounded shadow-lg transition-opacity">
+          <i class="w-4 h-4" data-lucide="message-square-plus">
+          </i>
+         </button>
+        </p>
+        <p class="mb-4 text-justify relative group">
+         "But whether it began with grace or a laundry emergency, it began. And from that moment on, they haven't stopped finding reasons to laugh together, support each other, and forgive each other's clumsiness."
+         <button class="absolute -right-12 top-0 opacity-0 group-hover:opacity-100 p-1.5 bg-brand-primary text-white rounded shadow-lg transition-opacity">
+          <i class="w-4 h-4" data-lucide="message-square-plus">
+          </i>
+         </button>
+        </p>
+       </div>
+      </div>
+      <!-- Comments Sidebar -->
+      <div class="w-full lg:w-1/3 flex flex-col gap-4">
+       <div class="card p-4 h-full flex flex-col">
+        <h3 class="font-serif text-lg text-gray-900 dark:text-white mb-4 flex justify-between items-center">
+         Comments
+         <span class="bg-gray-100 dark:bg-gray-700 text-xs px-2 py-1 rounded-full">
+          1 Open
+         </span>
+        </h3>
+        <div class="flex-1 overflow-y-auto space-y-4">
+         <!-- Comment Thread -->
+         <div class="border border-yellow-200 dark:border-yellow-900 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg p-4">
+          <div class="text-xs text-gray-500 mb-2 italic">
+           Refers to: "...spilling a large iced latte..."
+          </div>
+          <div class="flex gap-3 items-start mb-3">
+           <img alt="Chloe" class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&amp;fit=crop&amp;w=100&amp;q=80"/>
+           <div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">
+             Chloe
+            </div>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">
+             Haha this is perfect. Can we also mention that it was specifically a matcha latte? It makes the stain visual so much funnier.
+            </p>
+           </div>
+          </div>
+          <div class="flex gap-3 items-start ml-8 mt-3 pt-3 border-t border-yellow-200/50">
+           <img alt="Sarah" class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=100&amp;q=80"/>
+           <div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">
+             Sarah Jenkins
+            </div>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">
+             Yes! I'll update that in the next revision.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+         <textarea class="w-full text-sm p-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white resize-none" placeholder="Add a general comment..." rows="2"></textarea>
+         <div class="flex justify-end mt-2">
+          <button class="btn-primary text-xs py-1.5 px-3">
+           Post Comment
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- PAYMENTS TAB Placeholder -->
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-payments">
+     <div class="max-w-4xl mx-auto">
+      <div class="card p-6 sm:p-8 mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-0 bg-brand-primary text-white">
+       <div>
+        <h3 class="text-xl font-serif mb-1">
+         Total Balance
+        </h3>
+        <p class="text-4xl font-light">
+         $600.00
+        </p>
+       </div>
+       <button class="bg-white text-brand-primary w-full sm:w-auto px-6 py-3 rounded hover:bg-gray-100 font-medium transition-colors shadow-lg">
+        Make Payment
+       </button>
+      </div>
+      <h3 class="font-serif text-xl text-gray-900 dark:text-white mb-4">
+       Invoice History
+      </h3>
+      <div class="card overflow-hidden">
+       <table class="w-full text-left text-sm text-gray-600 dark:text-gray-400">
+        <thead class="bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 uppercase">
+         <tr>
+          <th class="px-6 py-4">
+           Invoice ID
+          </th>
+          <th class="px-6 py-4">
+           Description
+          </th>
+          <th class="px-6 py-4">
+           Date
+          </th>
+          <th class="px-6 py-4">
+           Amount
+          </th>
+          <th class="px-6 py-4">
+           Status
+          </th>
+          <th class="px-6 py-4">
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50">
+          <td class="px-6 py-4 font-medium">
+           #INV-2026-002
+          </td>
+          <td class="px-6 py-4">
+           Final Balance - Custom Package
+          </td>
+          <td class="px-6 py-4">
+           Sep 1, 2026
+          </td>
+          <td class="px-6 py-4">
+           $600.00
+          </td>
+          <td class="px-6 py-4">
+           <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">
+            Pending
+           </span>
+          </td>
+          <td class="px-6 py-4 text-right">
+           <button class="text-brand-primary hover:underline">
+            Pay
+           </button>
+          </td>
+         </tr>
+         <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+          <td class="px-6 py-4 font-medium">
+           #INV-2026-001
+          </td>
+          <td class="px-6 py-4">
+           50% Deposit - Custom Package
+          </td>
+          <td class="px-6 py-4">
+           Jan 10, 2026
+          </td>
+          <td class="px-6 py-4">
+           $600.00
+          </td>
+          <td class="px-6 py-4">
+           <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
+            Paid
+           </span>
+          </td>
+          <td class="px-6 py-4 text-right">
+           <button class="text-brand-primary hover:underline">
+            <i class="w-4 h-4 inline" data-lucide="download">
+            </i>
+           </button>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+    <!-- OTHER TABS (Placeholders to demonstrate functionality) -->
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-consultation">
+     <div class="card p-8 text-center max-w-2xl mx-auto mt-10">
+      <i class="w-16 h-16 text-brand-primary mx-auto mb-4 opacity-50" data-lucide="calendar">
+      </i>
+      <h3 class="text-2xl font-serif mb-2">
+       Consultation Completed
+      </h3>
+      <p class="text-gray-500 mb-6">
+       Your discovery call took place on Jan 14, 2026. You can review your notes or book an additional ad-hoc consultation.
+      </p>
+      <button class="btn-secondary">
+       Book Additional Call
+      </button>
+     </div>
+    </div>
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-script">
+     <div class="max-w-5xl mx-auto space-y-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+       <div>
+        <h3 class="text-2xl font-serif text-gray-900 dark:text-white">Your Ceremony Script</h3>
+        <p class="text-sm text-gray-500">Current version: Draft v1.2 (Updated 2 hours ago)</p>
+       </div>
+       <div class="flex gap-3">
+        <button class="btn-secondary text-sm px-4 py-2" onclick="switchTab('collaboration')">
+         <i class="w-4 h-4 mr-2 inline" data-lucide="edit"></i> Open Editor
+        </button>
+        <button class="btn-primary text-sm px-4 py-2">
+         <i class="w-4 h-4 mr-2 inline" data-lucide="download"></i> Download PDF
+        </button>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+       <!-- Outline Card -->
+       <div class="lg:col-span-2 space-y-6">
+        <div class="card p-6">
+         <h4 class="font-serif text-lg mb-4 text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-700 pb-2">Script Outline</h4>
+         <div class="space-y-4">
+          <div class="flex items-start gap-4">
+           <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">1</div>
+           <div>
+            <h5 class="font-medium text-gray-900 dark:text-white">The Welcome</h5>
+            <p class="text-sm text-gray-500 mt-1">Opening remarks and greeting to family and friends.</p>
+           </div>
+          </div>
+          <div class="flex items-start gap-4">
+           <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">2</div>
+           <div>
+            <h5 class="font-medium text-gray-900 dark:text-white">The Love Story</h5>
+            <p class="text-sm text-gray-500 mt-1">A personalized narrative of how Chloe and Mark met and their journey together.</p>
+           </div>
+          </div>
+          <div class="flex items-start gap-4">
+           <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">3</div>
+           <div>
+            <h5 class="font-medium text-gray-900 dark:text-white">Reading: "The Art of Marriage"</h5>
+            <p class="text-sm text-gray-500 mt-1">To be read by Mark's sister, Emily.</p>
+           </div>
+          </div>
+          <div class="flex items-start gap-4">
+           <div class="w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center font-bold font-serif flex-shrink-0">4</div>
+           <div>
+            <h5 class="font-medium text-gray-900 dark:text-white">The Vows</h5>
+            <p class="text-sm text-gray-500 mt-1">Traditional exchange of vows followed by personal promises.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- Info Sidebar -->
+       <div class="space-y-6">
+        <div class="card p-6">
+         <h4 class="font-serif text-lg mb-4 text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-700 pb-2">Details</h4>
+         <ul class="space-y-3 text-sm">
+          <li class="flex justify-between">
+           <span class="text-gray-500">Status</span>
+           <span class="font-medium text-blue-600 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-0.5 rounded">In Review</span>
+          </li>
+          <li class="flex justify-between">
+           <span class="text-gray-500">Est. Length</span>
+           <span class="font-medium text-gray-900 dark:text-white">20-25 mins</span>
+          </li>
+          <li class="flex justify-between">
+           <span class="text-gray-500">Word Count</span>
+           <span class="font-medium text-gray-900 dark:text-white">1,450</span>
+          </li>
+          <li class="flex justify-between">
+           <span class="text-gray-500">Last Edited</span>
+           <span class="font-medium text-gray-900 dark:text-white">2 hours ago</span>
+          </li>
+         </ul>
+        </div>
+        <div class="card p-6 bg-brand-primary text-white">
+         <h4 class="font-serif text-lg mb-2">Ready to finalize?</h4>
+         <p class="text-sm text-brand-light mb-4">Once you have reviewed the draft and left any comments in the collaboration tab, you can approve the script to move forward to rehearsal scheduling.</p>
+         <button class="w-full bg-white text-brand-primary py-2 rounded font-medium hover:bg-gray-100 transition-colors shadow-lg">Approve Final Draft</button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-rehearsal">
+     <div class="card p-8 max-w-2xl mx-auto mt-10">
+      <h3 class="text-2xl font-serif mb-6 text-gray-900 dark:text-white">
+       Schedule Rehearsal
+      </h3>
+      <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 mb-6 text-sm text-yellow-800 dark:text-yellow-200">
+       Please approve the final ceremony script before scheduling your rehearsal.
+      </div>
+      <button class="w-full py-3 bg-gray-200 dark:bg-gray-700 text-gray-500 cursor-not-allowed rounded" disabled="">
+       Select Date
+      </button>
+     </div>
+    </div>
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-details">
+     <div class="max-w-4xl mx-auto space-y-6">
+      <div class="card p-8">
+       <h3 class="text-xl font-serif mb-6 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+        Wedding Details
+       </h3>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+         <p class="text-sm text-gray-500 mb-1">
+          Wedding Date &amp; Time
+         </p>
+         <p class="font-medium text-gray-900 dark:text-white">
+          October 12, 2026 @ 4:00 PM
+         </p>
+        </div>
+        <div>
+         <p class="text-sm text-gray-500 mb-1">
+          Venue
+         </p>
+         <p class="font-medium text-gray-900 dark:text-white">
+          The Grand Botanical Gardens
+          <br/>
+          123 Floral Way, Portland, OR
+         </p>
+        </div>
+        <div>
+         <p class="text-sm text-gray-500 mb-1">
+          Estimated Guest Count
+         </p>
+         <p class="font-medium text-gray-900 dark:text-white">
+          150 Guests
+         </p>
+        </div>
+        <div>
+         <p class="text-sm text-gray-500 mb-1">
+          Wedding Party Size
+         </p>
+         <p class="font-medium text-gray-900 dark:text-white">
+          4 Bridesmaids, 4 Groomsmen
+         </p>
+        </div>
+       </div>
+       <div class="mt-6 flex justify-end">
+        <button class="btn-secondary text-sm py-2 px-4">
+         Edit Details
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="dashboard-tab h-full" data-aos="fade-in" id="tab-messages">
+     <div class="card flex flex-col h-[70vh] max-w-4xl mx-auto overflow-hidden">
+      <div class="bg-gray-50 dark:bg-gray-900 p-4 border-b border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+       <h3 class="font-serif text-lg text-gray-900 dark:text-white">
+        Messages with Sarah
+       </h3>
+       <span class="text-xs text-gray-500">
+        Typically replies within 24 hours
+       </span>
+      </div>
+      <div class="flex-1 p-6 overflow-y-auto space-y-6 bg-gray-50/50 dark:bg-gray-800/50">
+       <div class="flex gap-4">
+        <img alt="Sarah" class="w-10 h-10 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=100&amp;q=80"/>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-2xl rounded-tl-none border border-gray-200 dark:border-gray-700 shadow-sm max-w-lg">
+         <p class="text-sm text-gray-700 dark:text-gray-300">
+          Hi Chloe &amp; Mark! I'm so excited to start working on your ceremony. Could you let me know if anyone will be doing a reading?
+         </p>
+         <span class="text-xs text-gray-400 mt-2 block">
+          Aug 15, 2:30 PM
+         </span>
+        </div>
+       </div>
+       <div class="flex gap-4 flex-row-reverse">
+        <img alt="Chloe" class="w-10 h-10 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&amp;fit=crop&amp;w=100&amp;q=80"/>
+        <div class="bg-brand-primary text-white p-4 rounded-2xl rounded-tr-none shadow-sm max-w-lg">
+         <p class="text-sm">
+          Hi Sarah! Yes, Mark's sister is going to do a reading. We are still deciding on the exact poem though!
+         </p>
+         <span class="text-xs text-brand-light mt-2 block text-right">
+          Aug 16, 9:15 AM
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 flex gap-4 items-center">
+       <input class="flex-1 p-3 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white text-sm" placeholder="Type your message..." type="text"/>
+       <button class="bg-brand-primary text-white p-3 rounded-full hover:bg-brand-secondary transition-colors">
+        <i class="w-5 h-5" data-lucide="send">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-documents">
+     <div class="max-w-4xl mx-auto space-y-6">
+      <h3 class="font-serif text-xl text-gray-900 dark:text-white mb-4">
+       Important Documents
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+       <div class="card p-6 flex items-center justify-between hover:border-brand-primary transition-colors cursor-pointer group">
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+          <i data-lucide="file-text">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-medium text-gray-900 dark:text-white">
+           Service Contract
+          </h4>
+          <p class="text-xs text-gray-500 mt-1">
+           Signed on Jan 10, 2026
+          </p>
+         </div>
+        </div>
+        <i class="w-5 h-5 text-gray-400 group-hover:text-brand-primary" data-lucide="download">
+        </i>
+       </div>
+       <div class="card p-6 flex items-center justify-between hover:border-brand-primary transition-colors cursor-pointer group">
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+          <i data-lucide="check-circle">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-medium text-gray-900 dark:text-white">
+           Discovery Questionnaire
+          </h4>
+          <p class="text-xs text-gray-500 mt-1">
+           Completed
+          </p>
+         </div>
+        </div>
+        <i class="w-5 h-5 text-gray-400 group-hover:text-brand-primary" data-lucide="download">
+        </i>
+       </div>
+       <div class="card p-6 flex items-center justify-between hover:border-brand-primary transition-colors cursor-pointer group">
+        <div class="flex items-center gap-4">
+         <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+          <i data-lucide="file-badge-2">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-medium text-gray-900 dark:text-white">
+           Marriage License Guide
+          </h4>
+          <p class="text-xs text-gray-500 mt-1">
+           PDF Reference Guide
+          </p>
+         </div>
+        </div>
+        <i class="w-5 h-5 text-gray-400 group-hover:text-brand-primary" data-lucide="download">
+        </i>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-profile">
+     <div class="max-w-3xl mx-auto space-y-6">
+      <div class="card p-8">
+       <div class="flex items-center gap-6 mb-8">
+        <div class="relative">
+         <img alt="Couple" class="w-24 h-24 rounded-full object-cover" src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&amp;fit=crop&amp;w=150&amp;q=80"/>
+         <button class="absolute bottom-0 right-0 bg-white dark:bg-gray-700 p-2 rounded-full shadow-md text-gray-600 dark:text-gray-300 hover:text-brand-primary">
+          <i class="w-4 h-4" data-lucide="camera">
+          </i>
+         </button>
+        </div>
+        <div>
+         <h3 class="text-2xl font-serif text-gray-900 dark:text-white">
+          Chloe &amp; Mark
+         </h3>
+         <p class="text-gray-500">
+          Member since Jan 2026
+         </p>
+        </div>
+       </div>
+       <form class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+           Partner 1 Full Name
+          </label>
+          <input class="w-full p-2.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white" type="text" value="Chloe Adams"/>
+         </div>
+         <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+           Partner 2 Full Name
+          </label>
+          <input class="w-full p-2.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white" type="text" value="Mark Johnson"/>
+         </div>
+         <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+           Primary Email
+          </label>
+          <input class="w-full p-2.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white" type="email" value="chloe.adams@example.com"/>
+         </div>
+         <div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+           Primary Phone
+          </label>
+          <input class="w-full p-2.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white" type="tel" value="(555) 123-4567"/>
+         </div>
+        </div>
+        <div class="flex justify-end border-t border-gray-200 dark:border-gray-700 pt-6 mt-6">
+         <button class="btn-primary py-2 px-6" type="button">
+          Save Profile
+         </button>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+    <div class="dashboard-tab" data-aos="fade-in" id="tab-settings">
+     <div class="max-w-3xl mx-auto space-y-6">
+      <div class="card p-8">
+       <h3 class="text-xl font-serif mb-6 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+        Account Settings
+       </h3>
+       <h4 class="font-medium text-gray-900 dark:text-white mb-4">
+        Notifications
+       </h4>
+       <div class="space-y-4 mb-8">
+        <label class="flex items-center gap-3 cursor-pointer">
+         <input checked="" class="w-5 h-5 text-brand-primary rounded border-gray-300 focus:ring-brand-primary" type="checkbox"/>
+         <span class="text-gray-700 dark:text-gray-300">
+          Email me when my script is updated
+         </span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+         <input checked="" class="w-5 h-5 text-brand-primary rounded border-gray-300 focus:ring-brand-primary" type="checkbox"/>
+         <span class="text-gray-700 dark:text-gray-300">
+          Email me for new messages
+         </span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+         <input class="w-5 h-5 text-brand-primary rounded border-gray-300 focus:ring-brand-primary" type="checkbox"/>
+         <span class="text-gray-700 dark:text-gray-300">
+          Text message (SMS) alerts
+         </span>
+        </label>
+       </div>
+       <h4 class="font-medium text-gray-900 dark:text-white mb-4 border-t border-gray-200 dark:border-gray-700 pt-6">
+        Security
+       </h4>
+       <form class="space-y-4">
+        <div>
+         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+          Current Password
+         </label>
+         <input class="w-full max-w-md p-2.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white" type="password"/>
+        </div>
+        <div>
+         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+          New Password
+         </label>
+         <input class="w-full max-w-md p-2.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-primary dark:text-white" type="password"/>
+        </div>
+        <div class="pt-4">
+         <button class="btn-primary py-2 px-6 text-sm" type="button">
+          Update Password
+         </button>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </main>
+  </div>
+  <script>
+   lucide.createIcons();
+        
+        // Simple tab switching logic for Dashboard
+        const navItems = document.querySelectorAll('.nav-item');
+        const tabs = document.querySelectorAll('.dashboard-tab');
+        const pageTitle = document.getElementById('page-title');
+
+        // Sidebar mobile controls
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const openBtn = document.getElementById('open-sidebar');
+        const closeBtn = document.getElementById('close-sidebar');
+
+        function toggleSidebar(force) {
+            const isOpen = sidebar.classList.contains('open');
+            if (force === true || (!isOpen && force !== false)) {
+                sidebar.classList.add('open');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.remove('open');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        openBtn.addEventListener('click', () => toggleSidebar(true));
+        closeBtn.addEventListener('click', () => toggleSidebar(false));
+        overlay.addEventListener('click', () => toggleSidebar(false));
+
+        // Tab Switching
+        window.switchTab = function(targetId) {
+            // Update active state in sidebar
+            navItems.forEach(item => {
+                if(item.dataset.target === targetId) {
+                    item.classList.replace('text-gray-600', 'text-brand-primary');
+                    item.classList.replace('dark:text-gray-400', 'dark:text-brand-light');
+                    item.classList.add('bg-brand-primary/10', 'dark:bg-brand-primary/20');
+                    item.classList.remove('hover:bg-gray-100', 'dark:hover:bg-gray-700');
+                    pageTitle.textContent = item.textContent.trim();
+                } else {
+                    item.classList.replace('text-brand-primary', 'text-gray-600');
+                    item.classList.replace('dark:text-brand-light', 'dark:text-gray-400');
+                    item.classList.remove('bg-brand-primary/10', 'dark:bg-brand-primary/20');
+                    item.classList.add('hover:bg-gray-100', 'dark:hover:bg-gray-700');
+                }
+            });
+
+            // Show target tab
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if(tab.id === 'tab-' + targetId) {
+                    tab.classList.add('active');
+                }
+            });
+
+            // If on mobile, close sidebar on nav click
+            if (window.innerWidth < 1024) {
+                toggleSidebar(false);
+            }
+        };
+
+        navItems.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.dataset.target) {
+                    switchTab(btn.dataset.target);
+                }
+            });
+        });
+  </script>
+  <script src="../assets/js/main.js">
+  </script>
+ </body>
+</html>
+
+

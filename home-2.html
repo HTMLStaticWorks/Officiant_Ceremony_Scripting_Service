@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="scroll-smooth overflow-x-hidden" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   EverVow | Premium Officiant Services (Home 2)
+  </title>
+  <meta content="EverVow offers personalized, elegant ceremony scripting and officiant services to make your special day truly unforgettable." name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <script src="https://unpkg.com/lucide@latest">
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script>
+   tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#D4C5B9',
+                            DEFAULT: '#8A7B6E',
+                            dark: '#5A4E45',
+                            primary: '#2C3E35', 
+                            secondary: '#D4AF37' 
+                        },
+                        theme: {
+                            bg: '#FAF9F6',
+                            darkBg: '#121212'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+  </script>
+  <style type="text/tailwindcss">
+   @layer base {
+
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased text-gray-800 bg-theme-bg transition-colors duration-300;
+  }
+  
+  html.dark {
+    @apply text-gray-100;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+  [dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+        }
+        @layer components {
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wide text-white transition-all duration-300 bg-brand-primary rounded-md hover:bg-brand-dark hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300 border border-brand-primary text-brand-primary rounded-md hover:bg-brand-primary hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary dark:border-brand-light dark:text-brand-light dark:hover:bg-brand-light dark:hover:text-gray-900;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium transition-colors hover:text-brand-primary dark:text-gray-300 dark:hover:text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-brand-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+        }
+
+        @layer utilities {
+            .bg-theme-bg { background-color: theme('colors.theme.bg'); }
+            .dark .bg-theme-bg { background-color: theme('colors.theme.darkBg'); }
+        }
+  </style>
+  <!-- Custom CSS -->
+  <link href="../assets/css/style.css" rel="stylesheet"/>
+  <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+ </head>
+ <body class="bg-theme-bg text-gray-800 dark:text-gray-200 transition-colors duration-300 antialiased overflow-x-hidden">
+  <!-- HEADER (Global) -->
+  <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-theme-bg/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900/90" id="main-header">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+     <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity" href="../index.html">
+      <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
+      </i>
+      <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+       EverVow
+      </span>
+     </a>
+     <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse items-center">
+      <a class="nav-link" href="../index.html">
+       Home 1
+      </a>
+      <a class="nav-link text-brand-primary dark:text-white" href="home-2.html">
+       Home 2
+      </a>
+      <a class="nav-link" href="about.html">
+       About
+      </a>
+      <a class="nav-link" href="services.html">
+       Services
+      </a>
+      <a class="nav-link" href="ceremony-styles.html">
+       Styles
+      </a>
+      <a class="nav-link" href="sample-scripts.html">
+       Scripts
+      </a>
+      <a class="nav-link" href="booking.html">
+       Booking
+      </a>
+      <a class="nav-link" href="contact.html">
+       Contact
+      </a>
+      <a class="nav-link" href="dashboard.html">
+       Dashboard
+      </a>
+     </nav>
+     <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+      <button aria-label="Toggle Dark Mode" class="theme-toggle p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+       <i class="w-5 h-5" data-lucide="moon">
+       </i>
+      </button>
+      <button aria-label="Toggle RTL" class="rtl-toggle text-sm font-medium hover:text-brand-primary transition-colors">
+       <i class="w-5 h-5" data-lucide="arrow-left-right">
+       </i>
+      </button>
+      <a class="btn-primary text-sm px-5 py-2" href="signup.html">
+       Signup
+      </a>
+     </div>
+     <div class="flex lg:hidden items-center gap-4">
+      <button aria-label="Toggle Dark Mode" class="theme-toggle p-2">
+       <i class="w-5 h-5" data-lucide="moon">
+       </i>
+      </button>
+      <button aria-expanded="false" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none" id="mobile-menu-btn">
+       <i class="w-6 h-6" data-lucide="menu">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="hidden lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="../index.html">
+      Home 1
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary dark:text-white bg-gray-50 dark:bg-gray-800" href="home-2.html">
+      Home 2
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="about.html">
+      About
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="services.html">
+      Services
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="booking.html">
+      Booking
+     </a>
+     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="dashboard.html">
+      Dashboard
+     </a>
+     <a class="block px-3 py-2 mt-4 text-center btn-primary w-full" href="signup.html">
+      Signup
+     </a>
+    </div>
+   </div>
+  </header>
+  <main class="pt-20">
+   <!-- SECTION 1: Split Hero -->
+   <section class="relative min-h-[90vh] bg-theme-bg dark:bg-gray-900 flex flex-col lg:flex-row">
+    <div class="w-full lg:w-1/2 flex items-center p-8 lg:p-16 xl:p-24 relative z-10" data-aos="fade-right">
+     <div class="max-w-xl">
+      <div class="flex items-center gap-4 mb-6">
+       <div class="h-[1px] w-12 bg-brand-secondary">
+       </div>
+       <span class="text-sm uppercase tracking-widest text-brand-primary dark:text-brand-light font-medium">
+        Bespoke Officiant Services
+       </span>
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-serif text-gray-900 dark:text-white leading-[1.1] mb-6">
+       Your Love
+       <br/>
+       <span class="italic text-brand-secondary">
+        Authored
+       </span>
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 font-light leading-relaxed">
+       We don't just officiate ceremonies; we curate breathtaking moments tailored precisely to your shared history, values, and vision for the future.
+      </p>
+      <div class="flex gap-4">
+       <a class="btn-primary" href="booking.html">
+        Book Consultation
+       </a>
+       <a class="btn-secondary" href="sample-scripts.html">
+        Read Samples
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="w-full lg:w-1/2 h-[60vh] lg:h-auto relative" data-aos="fade-left">
+     <img alt="Elegant ceremony details" class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"/>
+     <!-- Elegant floating information card -->
+     <div class="absolute bottom-10 left-10 lg:-left-16 bg-white/90 dark:bg-gray-900/90 backdrop-blur p-6 rounded-xl shadow-2xl max-w-sm hidden md:block border border-white/20 dark:border-gray-700/50">
+      <i class="text-brand-secondary w-8 h-8 mb-4" data-lucide="award">
+      </i>
+      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-2">
+       Award-Winning Scripts
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+       Recognized for deeply personal storytelling and flawless delivery.
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- SECTION 2: "Your Story, Your Ceremony" -->
+   <section class="py-24 bg-white dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5" data-aos="fade-up">
+       <div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-xl">
+        <img alt="Couple holding hands" class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       </div>
+      </div>
+      <div class="lg:col-span-7 lg:pl-12" data-aos="fade-up" data-aos-delay="200">
+       <h2 class="text-4xl lg:text-5xl font-serif text-gray-900 dark:text-white mb-8">
+        Every couple has a story.
+        <br/>
+        We bring yours to life.
+       </h2>
+       <div class="space-y-6 text-gray-600 dark:text-gray-400 text-lg font-light leading-relaxed">
+        <p>
+         A generic script cannot capture the nuance of how you met, the trials you've overcome together, or the unique inside jokes that define your relationship.
+        </p>
+        <p>
+         We approach each ceremony as a blank page. By getting to know you personally through our discovery process, we extract the essence of your bond and translate it into a ceremony that will have your guests both laughing and reaching for tissues.
+        </p>
+       </div>
+       <div class="mt-10 grid grid-cols-2 gap-8 pt-10 border-t border-gray-100 dark:border-gray-700">
+        <div>
+         <div class="text-3xl font-serif text-brand-primary dark:text-brand-light mb-2">
+          100%
+         </div>
+         <div class="text-sm font-medium text-gray-900 dark:text-white">
+          Custom Scripts
+         </div>
+        </div>
+        <div>
+         <div class="text-3xl font-serif text-brand-primary dark:text-brand-light mb-2">
+          5★
+         </div>
+         <div class="text-sm font-medium text-gray-900 dark:text-white">
+          Couple Reviews
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- SECTION 3: Ceremony Style Collection -->
+   <section class="py-24 bg-theme-bg dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16" data-aos="fade-up">
+      <span class="text-brand-secondary font-medium tracking-widest uppercase text-sm mb-4 block">
+       Curated Services
+      </span>
+      <h2 class="text-3xl md:text-4xl font-serif text-gray-900 dark:text-white">
+       Ceremony Collections
+      </h2>
+     </div>
+     <div class="gap-8 flex flex-wrap justify-center">
+      <!-- Traditional -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg h-[400px] w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]" data-aos="zoom-in" data-aos-delay="100">
+       <img alt="Traditional" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1537274942065-eda9d00a6293?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
+       </div>
+       <div class="absolute inset-0 p-8 flex flex-col justify-end">
+        <h3 class="text-2xl font-serif text-white mb-2">
+         Traditional
+        </h3>
+        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+         Honoring heritage and classic rituals with timeless elegance.
+        </p>
+        <a class="inline-flex items-center text-brand-secondary text-sm font-medium hover:text-white transition-colors" href="ceremony-styles.html">
+         Explore
+         <i class="w-4 h-4 ml-2" data-lucide="arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+      <!-- Secular -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg h-[400px] w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]" data-aos="zoom-in" data-aos-delay="200">
+       <img alt="Secular" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
+       </div>
+       <div class="absolute inset-0 p-8 flex flex-col justify-end">
+        <h3 class="text-2xl font-serif text-white mb-2">
+         Contemporary Secular
+        </h3>
+        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+         Focused purely on your relationship, values, and shared journey.
+        </p>
+        <a class="inline-flex items-center text-brand-secondary text-sm font-medium hover:text-white transition-colors" href="ceremony-styles.html">
+         Explore
+         <i class="w-4 h-4 ml-2" data-lucide="arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+      <!-- Spiritual -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg h-[400px] w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]" data-aos="zoom-in" data-aos-delay="300">
+       <img alt="Spiritual" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent">
+       </div>
+       <div class="absolute inset-0 p-8 flex flex-col justify-end">
+        <h3 class="text-2xl font-serif text-white mb-2">
+         Spiritual &amp; Intimate
+        </h3>
+        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+         Meaningful rituals blending different backgrounds or natural elements.
+        </p>
+        <a class="inline-flex items-center text-brand-secondary text-sm font-medium hover:text-white transition-colors" href="ceremony-styles.html">
+         Explore
+         <i class="w-4 h-4 ml-2" data-lucide="arrow-right">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- SECTION 4: Script Creation Studio -->
+   <section class="py-24 bg-brand-primary dark:bg-gray-800 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-serif mb-6">
+       The Creation Studio
+      </h2>
+      <p class="text-white/80">
+       Experience our proprietary collaborative process through your personal couple portal. We write, you review, together we perfect.
+      </p>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm text-center" data-aos="fade-up" data-aos-delay="100">
+       <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
+        <i data-lucide="clipboard-list">
+        </i>
+       </div>
+       <h4 class="font-medium mb-2">
+        1. Questionnaire
+       </h4>
+       <p class="text-xs text-white/70">
+        You share your unique love story details.
+       </p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm text-center" data-aos="fade-up" data-aos-delay="200">
+       <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
+        <i data-lucide="coffee">
+        </i>
+       </div>
+       <h4 class="font-medium mb-2">
+        2. Discovery
+       </h4>
+       <p class="text-xs text-white/70">
+        A deep-dive consultation to define tone.
+       </p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm text-center" data-aos="fade-up" data-aos-delay="300">
+       <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
+        <i data-lucide="file-edit">
+        </i>
+       </div>
+       <h4 class="font-medium mb-2">
+        3. First Draft
+       </h4>
+       <p class="text-xs text-white/70">
+        We craft a bespoke initial script.
+       </p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm text-center" data-aos="fade-up" data-aos-delay="400">
+       <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
+        <i data-lucide="users">
+        </i>
+       </div>
+       <h4 class="font-medium mb-2">
+        4. Collaboration
+       </h4>
+       <p class="text-xs text-white/70">
+        Review and tweak in your dashboard.
+       </p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm text-center" data-aos="fade-up" data-aos-delay="500">
+       <div class="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4 text-brand-primary">
+        <i data-lucide="check-circle">
+        </i>
+       </div>
+       <h4 class="font-medium mb-2">
+        5. Final Polish
+       </h4>
+       <p class="text-xs text-white/70">
+        A masterpiece ready for the altar.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- SECTION 5: Couple Testimonials / Love Stories -->
+   <section class="py-24 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-serif text-gray-900 dark:text-white mb-4">
+       Love Stories
+      </h2>
+     </div>
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="flex gap-6 items-start" data-aos="fade-right">
+       <img alt="Couple 1" class="w-24 h-24 object-cover rounded-full shadow-lg shrink-0" src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&amp;fit=crop&amp;w=200&amp;q=80"/>
+       <div>
+        <div class="flex text-brand-secondary mb-2">
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+        </div>
+        <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-2">
+         "Beyond our wildest dreams."
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-4">
+         "The words spoken were so profoundly 'us'. There wasn't a dry eye in the venue, followed immediately by roaring laughter. Pure perfection."
+        </p>
+        <span class="text-xs uppercase font-medium tracking-wider text-brand-primary dark:text-brand-light">
+         — Amanda &amp; Ryan
+        </span>
+       </div>
+      </div>
+      <div class="flex gap-6 items-start" data-aos="fade-left">
+       <img alt="Couple 2" class="w-24 h-24 object-cover rounded-full shadow-lg shrink-0" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&amp;fit=crop&amp;w=200&amp;q=80"/>
+       <div>
+        <div class="flex text-brand-secondary mb-2">
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+         <i class="w-4 h-4 fill-current" data-lucide="star">
+         </i>
+        </div>
+        <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-2">
+         "The portal made it so easy."
+        </h4>
+        <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-4">
+         "We loved being able to log into our dashboard and see the script take shape. The collaborative process took all the stress away."
+        </p>
+        <span class="text-xs uppercase font-medium tracking-wider text-brand-primary dark:text-brand-light">
+         — Marcus &amp; Julian
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- SECTION 6: Consultation CTA -->
+   <section class="py-24 bg-theme-bg dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="zoom-in">
+     <h2 class="text-4xl md:text-5xl font-serif text-gray-900 dark:text-white mb-6">
+      Let's Create Your Ceremony
+     </h2>
+     <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
+      Take the first step toward an unforgettable wedding day. Schedule a complimentary consultation to see if we're the right fit for your love story.
+     </p>
+     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <a class="btn-primary px-10 py-4 text-lg" href="booking.html">
+       Book Now
+      </a>
+      <a class="btn-secondary px-10 py-4 text-lg bg-white dark:bg-transparent" href="contact.html">
+       Contact Us
+      </a>
+     </div>
+     <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+      No commitment required. We just love talking about weddings.
+     </p>
+    </div>
+   </section>
+  </main>
+  <!-- FOOTER (Global) -->
+  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+     <div>
+      <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity mb-6" href="../index.html">
+       <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
+       </i>
+       <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        EverVow
+       </span>
+      </a>
+      <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+       Premium officiant and ceremony scripting services crafting personalized, elegant, and unforgettable wedding ceremonies.
+      </p>
+      <div class="flex gap-4">
+       <a aria-label="Instagram" class="text-gray-400 hover:text-brand-primary transition-colors" href="#">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+         <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
+         </rect>
+         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+         </path>
+         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
+         </line>
+        </svg>
+       </a>
+       <a aria-label="Facebook" class="text-gray-400 hover:text-brand-primary transition-colors" href="#">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+         </path>
+        </svg>
+       </a>
+       <a aria-label="YouTube" class="text-gray-400 hover:text-brand-primary transition-colors" href="#">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+         </path>
+         <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02">
+         </polygon>
+        </svg>
+       </a>
+      </div>
+     </div>
+     <div>
+      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
+       Explore
+      </h4>
+      <ul class="space-y-3 text-sm">
+       <li>
+        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="about.html">
+         Our Story
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="services.html">
+         Services &amp; Pricing
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="ceremony-styles.html">
+         Ceremony Styles
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="sample-scripts.html">
+         Sample Scripts
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="login.html">
+         Couple Login
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
+       Contact
+      </h4>
+      <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+       <li class="flex items-start gap-3">
+        <i class="w-5 h-5 text-brand-primary shrink-0" data-lucide="map-pin">
+        </i>
+        <span>
+         123 Wedding Lane, Suite 100
+         <br/>
+         New York, NY 10001
+        </span>
+       </li>
+       <li class="flex items-center gap-3">
+        <i class="w-5 h-5 text-brand-primary shrink-0" data-lucide="phone">
+        </i>
+        <span>
+         +1 (555) 123-4567
+        </span>
+       </li>
+       <li class="flex items-center gap-3">
+        <i class="w-5 h-5 text-brand-primary shrink-0" data-lucide="mail">
+        </i>
+        <a class="hover:text-brand-primary" href="mailto:hello@evervow.example.com">
+         hello@evervow.example.com
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
+       Newsletter
+      </h4>
+      <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+       Subscribe for ceremony inspiration and vow writing tips.
+      </p>
+      <form class="flex gap-2" onsubmit="event.preventDefault();">
+       <input class="w-full px-4 py-2 text-sm border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary dark:bg-gray-800 dark:text-white" placeholder="Your email address" required="" type="email"/>
+       <button class="btn-primary px-4 py-2" type="submit">
+        Subscribe
+       </button>
+      </form>
+     </div>
+    </div>
+    <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+     <p>
+      © 2026 EverVow Officiant Services. All rights reserved.
+     </p>
+     <div class="flex gap-4 items-center">
+      <a class="hover:text-brand-primary transition-colors" href="#">
+       Privacy Policy
+      </a>
+      <a class="hover:text-brand-primary transition-colors" href="#">
+       Terms of Service
+      </a>
+      <button aria-label="Back to top" class="ml-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-brand-primary dark:hover:bg-brand-primary hover:text-white transition-colors focus:outline-none" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
+       <i class="w-4 h-4" data-lucide="arrow-up">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script>
+   lucide.createIcons();
+  </script>
+  <script src="../assets/js/main.js">
+  </script>
+ </body>
+</html>
