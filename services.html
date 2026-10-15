@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="scroll-smooth overflow-x-hidden" lang="en">
 
 <head>
@@ -199,21 +199,44 @@
   </header>
   <main class="pt-20">
     <!-- SECTION 1: Services Hero -->
-    <section class="relative py-24 bg-theme-bg dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+    <section class="relative py-20 bg-theme-bg dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-          <h1 class="text-5xl md:text-6xl font-serif text-gray-900 dark:text-white mb-6">
-            Our Services
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+            Complete Ceremony &amp; Officiant Offerings
+          </span>
+          <h1 class="text-4xl md:text-6xl font-serif text-gray-900 dark:text-white mt-2 mb-6">
+            Wedding Officiant &amp; Scripting Services
           </h1>
-          <p class="text-lg text-gray-600 dark:text-gray-400 font-light mb-10">
-            From drafting the perfect vows to coordinating your rehearsal and delivering a flawless
-            ceremony, we offer comprehensive packages tailored to your needs.
+          <p class="text-lg text-gray-600 dark:text-gray-400 font-light mb-8">
+            From licensed wedding day officiating and custom ground-up ceremony scripts to private vow coaching and rehearsal coordination, explore our transparent packages designed for your special day.
           </p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href="booking.html" class="btn-primary text-sm px-6 py-3">
+              <i class="w-4 h-4 mr-2" data-lucide="calendar"></i> Book an Officiant
+            </a>
+            <a href="booking.html" class="btn-secondary text-sm px-6 py-3">
+              <i class="w-4 h-4 mr-2" data-lucide="sliders"></i> Customize Your Ceremony
+            </a>
+            <a href="sample-scripts.html" class="btn-secondary text-sm px-6 py-3">
+              <i class="w-4 h-4 mr-2" data-lucide="file-text"></i> View Sample Scripts
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Jump Categories -->
+        <div class="mt-12 flex flex-wrap justify-center gap-3 text-xs font-medium" data-aos="fade-up" data-aos-delay="100">
+          <a href="#classic" class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-primary text-gray-700 dark:text-gray-300">Classic Ceremonies ($650)</a>
+          <a href="#contemporary" class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-primary text-gray-700 dark:text-gray-300">Contemporary &amp; Secular ($750)</a>
+          <a href="#signature" class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-primary text-gray-700 dark:text-gray-300">Signature Custom ($1,200)</a>
+          <a href="#elopement" class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-primary text-gray-700 dark:text-gray-300">Elopements ($450)</a>
+          <a href="#renewal" class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-primary text-gray-700 dark:text-gray-300">Vow Renewals ($550)</a>
+          <a href="#speeches" class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-brand-primary text-gray-700 dark:text-gray-300">Speeches &amp; Vows ($250+)</a>
         </div>
       </div>
     </section>
     <!-- SECTION 2: Traditional Ceremonies -->
-    <section class="py-24 bg-white dark:bg-gray-800">
+    <section class="py-24 bg-white dark:bg-gray-800" id="classic">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div class="order-2 lg:order-1" data-aos="fade-right">
@@ -267,7 +290,7 @@
       </div>
     </section>
     <!-- SECTION 3: Secular & Contemporary Ceremonies -->
-    <section class="py-24 bg-theme-bg dark:bg-gray-900">
+    <section class="py-24 bg-theme-bg dark:bg-gray-900" id="contemporary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div data-aos="fade-right">
@@ -321,7 +344,7 @@
       </div>
     </section>
     <!-- SECTION 4: Custom Ceremony & Script Services -->
-    <section class="py-24 bg-white dark:bg-gray-800">
+    <section class="py-24 bg-white dark:bg-gray-800" id="signature">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div class="order-2 lg:order-1" data-aos="fade-right">
@@ -375,7 +398,7 @@
       </div>
     </section>
     <!-- SECTION 5: Elopements & Micro-Weddings -->
-    <section class="py-24 bg-theme-bg dark:bg-gray-900">
+    <section class="py-24 bg-theme-bg dark:bg-gray-900" id="elopement">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div data-aos="fade-right">
@@ -428,7 +451,7 @@
       </div>
     </section>
     <!-- SECTION 6: Vow Renewal Ceremony -->
-    <section class="py-24 bg-white dark:bg-gray-800">
+    <section class="py-24 bg-white dark:bg-gray-800" id="renewal">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div class="order-2 lg:order-1" data-aos="fade-right">
@@ -477,6 +500,104 @@
             <img alt="Vow Renewal" class="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               src="https://images.pexels.com/photos/27268895/pexels-photo-27268895.jpeg" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Wedding Speeches, Vows & Toasts Writing -->
+    <section class="py-24 bg-theme-bg dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800" id="speeches">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+            Speech &amp; Vow Services
+          </span>
+          <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
+            Speech Writing &amp; Vow Coaching Options
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 font-light text-base md:text-lg">
+            Make every spoken word count. We help brides, grooms, and wedding VIPs deliver confident, touching, and laugh-filled moments.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Option 1 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="edit-3"></i>
+              </div>
+              <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Couples</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1 mb-2">Private Vow Writing Coaching</h3>
+              <div class="text-2xl font-serif font-bold text-brand-primary dark:text-brand-light mb-4">$250 <span class="text-xs font-sans text-gray-500 font-normal">/ couple</span></div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                Two private consultations (one with each partner individually). We ensure word count, structure, and emotional resonance align seamlessly without spoiling the wedding-day reveal.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2.5 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 1-on-1 brainstorming questionnaire</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 2 rounds of structural line-edits</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Pocket vow booklet printing</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-secondary w-full text-center text-xs py-2.5">
+              Customize Your Ceremony
+            </a>
+          </div>
+
+          <!-- Option 2 -->
+          <div class="card p-8 flex flex-col justify-between border-2 border-brand-primary/40 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-primary text-white flex items-center justify-center mb-6 shadow">
+                <i class="w-6 h-6" data-lucide="mic"></i>
+              </div>
+              <span class="text-xs font-semibold text-brand-primary dark:text-brand-light uppercase tracking-wider">Bridal Party</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1 mb-2">Best Man / MOH Toast</h3>
+              <div class="text-2xl font-serif font-bold text-brand-primary dark:text-brand-light mb-4">$300 <span class="text-xs font-sans text-gray-500 font-normal">/ speech</span></div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                Turn nerves into effortless confidence. We extract your best memories, balance humor with heartfelt reverence, and prepare a crisp 4-minute speech that commands the room.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2.5 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 45-min storytelling interview</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Full speech ghostwriting &amp; revisions</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Delivery pacing &amp; microphone coaching</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-primary w-full text-center text-xs py-2.5">
+              Book Speech Service
+            </a>
+          </div>
+
+          <!-- Option 3 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="users"></i>
+              </div>
+              <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Parents &amp; Family</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1 mb-2">Parent Welcome Speech</h3>
+              <div class="text-2xl font-serif font-bold text-brand-primary dark:text-brand-light mb-4">$350 <span class="text-xs font-sans text-gray-500 font-normal">/ speech</span></div>
+              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                Honor years of memories and officially welcome your child's partner into the family. Thoughtful pacing and cultural awareness woven into every sentence.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2.5 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> In-depth family background discovery</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Tailored tone (poignant or humorous)</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Printed cue cards provided</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-secondary w-full text-center text-xs py-2.5">
+              Book Speech Service
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-14 p-8 rounded-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up">
+          <div>
+            <h4 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Need a script written for a friend who is officiating?</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">We draft complete, turnkey officiant ceremony binders for friends or family members with stage directions, phonetics, and cues.</p>
+          </div>
+          <a href="booking.html" class="btn-primary text-xs py-3 px-6 shrink-0 whitespace-nowrap">
+            Explore Friend Officiant Script ($400)
+          </a>
         </div>
       </div>
     </section>
