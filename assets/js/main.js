@@ -84,18 +84,66 @@ function initRTL() {
     });
 }
 
-// Mobile Menu
+// Mobile & Tablet Menu
 function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    
-    if (btn && menu) {
-        btn.addEventListener('click', () => {
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', !isExpanded);
-            menu.classList.toggle('hidden');
-        });
+    if (!btn || !menu) return;
+
+    function openMenu() {
+        btn.setAttribute('aria-expanded', 'true');
+        menu.classList.remove('hidden');
+        menu.classList.add('active');
+        btn.innerHTML = '<i class="w-6 h-6" data-lucide="x"></i>';
+        if (typeof lucide !== 'undefined') lucide.createIcons();
     }
+
+    function closeMenu() {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+        menu.classList.remove('active');
+        btn.innerHTML = '<i class="w-6 h-6" data-lucide="menu"></i>';
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Close when clicking any nav link
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+
+    // Close when clicking outside header
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
+        }
+    });
+
+    // Close when resizing to desktop (>= 1280px)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1280 && btn.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
+        }
+    });
 }
 
 // Sticky Header

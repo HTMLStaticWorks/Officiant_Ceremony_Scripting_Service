@@ -40,6 +40,16 @@
   border-bottom: 1px solid rgba(55, 65, 81, 0.5);
 }
 
+/* Mobile Hero Text Legibility Enhancement */
+@media (max-width: 768px) {
+  .hero-mobile-legible {
+    text-shadow: 0 1px 2px rgba(250, 247, 242, 0.95), 0 0 10px rgba(250, 247, 242, 0.85);
+  }
+  .dark .hero-mobile-legible {
+    text-shadow: 0 1px 3px rgba(3, 7, 18, 0.95), 0 0 10px rgba(3, 7, 18, 0.85);
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -53,4 +63,511 @@ html.dark ::-webkit-scrollbar-track {
 ::-webkit-scrollbar-thumb {
   background-color: #2C3E35;
   border-radius: 9999px;
+}
+
+/* ==========================================================================
+   UNIFIED CTA & BUTTON SYSTEM (Identical Same Size Across All Pages & Views)
+   ========================================================================== */
+
+.btn-primary,
+.btn-secondary,
+.btn-hero,
+.btn-xl,
+.btn-lg,
+.btn-md,
+.btn-sm,
+.btn-nav,
+.btn-xs {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  box-sizing: border-box !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 45px !important;
+  letter-spacing: 0.02em !important;
+  border-radius: 0.5rem !important;
+  border-width: 1.5px !important;
+  border-style: solid !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* On tablet and desktop, restore slightly larger font & padding */
+@media (min-width: 640px) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-hero,
+  .btn-xl,
+  .btn-lg,
+  .btn-md,
+  .btn-sm {
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  background-color: #2C3E35 !important;
+  color: #ffffff !important;
+  border-color: #2C3E35 !important;
+  box-shadow: 0 2px 6px rgba(44, 62, 53, 0.15) !important;
+}
+
+.btn-primary:hover {
+  background-color: #1e2c26 !important;
+  border-color: #1e2c26 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(44, 62, 53, 0.25) !important;
+}
+
+/* Secondary Button Styling */
+.btn-secondary {
+  background-color: transparent !important;
+  color: #2C3E35 !important;
+  border-color: #2C3E35 !important;
+}
+
+.dark .btn-secondary {
+  color: #D4C5B9 !important;
+  border-color: #D4C5B9 !important;
+}
+
+.btn-secondary:hover {
+  background-color: #2C3E35 !important;
+  color: #ffffff !important;
+  border-color: #2C3E35 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Special white theme variants (e.g. on dark CTA banners) */
+.btn-primary.bg-white,
+a.btn-primary.bg-white,
+button.btn-primary.bg-white {
+  background-color: #ffffff !important;
+  color: #2C3E35 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+}
+
+.btn-primary.bg-white:hover,
+a.btn-primary.bg-white:hover,
+button.btn-primary.bg-white:hover {
+  background-color: #f3f4f6 !important;
+  border-color: #f3f4f6 !important;
+  color: #1e2c26 !important;
+}
+
+.btn-secondary.border-white,
+a.btn-secondary.border-white,
+button.btn-secondary.border-white {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.btn-secondary.border-white:hover,
+a.btn-secondary.border-white:hover,
+button.btn-secondary.border-white:hover {
+  background-color: #ffffff !important;
+  color: #2C3E35 !important;
+  border-color: #ffffff !important;
+}
+
+/* Semi-transparent blur variants (hero glass buttons) */
+.btn-secondary.bg-white\/70,
+.btn-secondary.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  border-color: rgba(44, 62, 53, 0.25) !important;
+  color: #2C3E35 !important;
+}
+
+.dark .btn-secondary.bg-white\/70,
+.dark .btn-secondary.bg-white\/80,
+.dark .btn-secondary.dark\:bg-gray-800\/70,
+.dark .btn-secondary.dark\:bg-gray-800\/80 {
+  background-color: rgba(31, 41, 55, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  border-color: rgba(212, 197, 185, 0.3) !important;
+  color: #FAF9F6 !important;
+}
+
+/* CTA Sections Responsive Padding */
+.cta-section-hero {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .cta-section-hero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.cta-section-master {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .cta-section-master {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ==========================================================================
+   ALIGNED EQUAL-SIZE CTA BUTTONS (Matching Width & Height Across All Views)
+   ========================================================================== */
+
+/* Navbar compact action button */
+.btn-nav,
+.btn-xs {
+  width: auto !important;
+  min-width: 100px !important;
+  max-width: 140px !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  border-radius: 9999px !important;
+}
+
+/* Hero, Section, and Grouped CTA Buttons: Aligned in EXACT same size */
+.cta-equal,
+.flex.flex-wrap.gap-4.items-center > .btn-primary,
+.flex.flex-wrap.gap-4.items-center > .btn-secondary,
+.flex.flex-wrap.gap-4 > .btn-primary,
+.flex.flex-wrap.gap-4 > .btn-secondary,
+.flex.flex-wrap.justify-center.gap-4 > .btn-primary,
+.flex.flex-wrap.justify-center.gap-4 > .btn-secondary,
+.flex-col.sm\:flex-row.gap-4 > .btn-primary,
+.flex-col.sm\:flex-row.gap-4 > .btn-secondary,
+.flex-col.sm\:flex-row.gap-4.items-center > .btn-primary,
+.flex-col.sm\:flex-row.gap-4.items-center > .btn-secondary,
+.flex-col.sm\:flex-row.gap-4.justify-center > .btn-primary,
+.flex-col.sm\:flex-row.gap-4.justify-center > .btn-secondary,
+.flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-primary,
+.flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-secondary {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  padding-left: 0.875rem !important;
+  padding-right: 0.875rem !important;
+  font-size: 0.8125rem !important;
+  text-align: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+}
+
+/* Tablet (640px+): give more room */
+@media (min-width: 640px) {
+  .cta-equal,
+  .flex.flex-wrap.gap-4.items-center > .btn-primary,
+  .flex.flex-wrap.gap-4.items-center > .btn-secondary,
+  .flex.flex-wrap.gap-4 > .btn-primary,
+  .flex.flex-wrap.gap-4 > .btn-secondary,
+  .flex.flex-wrap.justify-center.gap-4 > .btn-primary,
+  .flex.flex-wrap.justify-center.gap-4 > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4 > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4 > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4.items-center > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4.items-center > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4.justify-center > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4.justify-center > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-secondary {
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 0.875rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Mobile: full width, keep nowrap, scale down font to prevent wrapping */
+@media (max-width: 639px) {
+  .cta-equal,
+  .flex.flex-wrap.gap-4.items-center > .btn-primary,
+  .flex.flex-wrap.gap-4.items-center > .btn-secondary,
+  .flex.flex-wrap.gap-4 > .btn-primary,
+  .flex.flex-wrap.gap-4 > .btn-secondary,
+  .flex.flex-wrap.justify-center.gap-4 > .btn-primary,
+  .flex.flex-wrap.justify-center.gap-4 > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4 > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4 > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4.items-center > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4.items-center > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4.justify-center > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4.justify-center > .btn-secondary,
+  .flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-primary,
+  .flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-secondary {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    font-size: 0.8125rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.01em !important;
+  }
+}
+
+/* ==========================================================================
+   HERO DESCRIPTION READABILITY (High Contrast in Light & Dark Mode)
+   ========================================================================== */
+
+.hero-description {
+  color: #1f2937 !important; /* High-contrast Charcoal/Slate 800 */
+  font-size: 1.125rem !important; /* 18px */
+  font-weight: 450 !important;
+  line-height: 1.75 !important;
+  letter-spacing: -0.01em !important;
+  text-rendering: optimizeLegibility !important;
+  min-height: 5.25rem !important;
+  margin-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .hero-description {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.8 !important;
+    min-height: 6.75rem !important; /* Exactly 108px - 3 uniform lines */
+  }
+}
+
+html.dark .hero-description {
+  color: #f3f4f6 !important; /* Bright crisp Gray 100 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Light text on dark green hero backgrounds (like about.html) */
+.hero-description-light {
+  color: #ffffff !important;
+  font-size: 1.125rem !important;
+  font-weight: 450 !important;
+  line-height: 1.75 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  min-height: 5.25rem !important;
+  margin-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .hero-description-light {
+    font-size: 1.25rem !important;
+    line-height: 1.8 !important;
+    min-height: 6.75rem !important; /* Exactly 108px - 3 uniform lines */
+  }
+}
+
+/* Card Badge & Overflow Fix (prevents top badge cropping) */
+.card.overflow-visible {
+  overflow: visible !important;
+}
+
+.card-badge-popular {
+  position: absolute !important;
+  top: -14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 20 !important;
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   SCRIPT EXCERPT SPEAKER TAGS (High Contrast & Clear Visibility in Both Modes)
+   ========================================================================== */
+
+.speaker-tag,
+.script-card span.tracking-widest {
+  color: #2C3E35 !important; /* Deep forest green in light mode */
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  display: inline-block !important;
+}
+
+html.dark .speaker-tag,
+html.dark .script-card span.tracking-widest,
+.dark .speaker-tag,
+.dark .script-card span.tracking-widest {
+  color: #E5C365 !important; /* Radiant warm gold in dark mode - high contrast and vivid */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   AUTH FORMS (LOGIN / SIGNUP) NO-WRAP FIXES FOR MOBILE SCREENS
+   ========================================================================== */
+
+.login-auth-options {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+}
+
+.login-auth-options label,
+.login-auth-options a,
+.login-auth-options span {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .login-auth-options {
+    font-size: 0.8125rem !important; /* 13px clean fit for 360px & smaller */
+    gap: 0.375rem !important;
+  }
+  .login-auth-options label,
+  .login-auth-options a {
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* ==========================================================================
+   ABOUT PAGE: Center-align paragraphs in Our Philosophy & Meet the Officiants on mobile/tablet
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .section-philosophy p,
+  .section-officiants p {
+    text-align: center !important;
+  }
+}
+
+/* ==========================================================================
+   SAMPLE SCRIPT EXCERPT CARD (Section 7) MOBILE FOOTER ALIGNMENT
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .script-excerpt-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  .script-excerpt-footer span {
+    white-space: nowrap !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .script-excerpt-footer a {
+    align-self: flex-start !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* ==========================================================================
+   CONTACT PAGE: Align Map and Send Message form heights equally
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  .contact-map-wrapper {
+    height: 100% !important;
+    min-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .contact-map-wrapper iframe {
+    width: 100% !important;
+    height: 100% !important;
+    flex-grow: 1 !important;
+    min-height: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET NAVIGATION DRAWER & HEADER RESPONSIVENESS
+   ========================================================================== */
+
+#mobile-menu {
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+html.dark #mobile-menu {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure mobile menu link items have comfortable touch targets and clear active states */
+#mobile-menu a:not(.btn-primary) {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 44px !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  border-radius: 0.5rem !important;
+}
+
+/* Ensure Signup button inside mobile menu is full width with identical height */
+#mobile-menu .btn-primary {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  margin-top: 0.75rem !important;
+  border-radius: 0.5rem !important;
+  justify-content: center !important;
+  display: flex !important;
+}
+
+/* Tablet refinement (640px to 1279px): make mobile-menu neatly centered */
+@media (min-width: 640px) and (max-width: 1279px) {
+  #mobile-menu > div {
+    max-width: 640px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Mobile header action buttons layout safety on small screens */
+@media (max-width: 480px) {
+  #main-header .h-20 {
+    height: 4.5rem !important;
+  }
+  #main-header .font-serif.text-2xl {
+    font-size: 1.25rem !important;
+  }
+  #main-header .gap-4 {
+    gap: 0.5rem !important;
+  }
+  #main-header .w-10.h-10 {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+  #main-header .w-6.h-6 {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  #main-header .w-5.h-5 {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+  }
 }

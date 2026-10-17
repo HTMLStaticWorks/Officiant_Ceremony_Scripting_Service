@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html class="scroll-smooth overflow-x-hidden" lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>
-   EverVow | Premium Officiant &amp; Ceremony Scripting Service
+    Evervow | Premium Officiant &amp; Ceremony Scripting Service
   </title>
-  <meta content="EverVow offers personalized, elegant ceremony scripting and officiant services to make your special day truly unforgettable." name="description"/>
+  <meta
+    content="Evervow offers personalized, elegant ceremony scripting and officiant services to make your special day truly unforgettable."
+    name="description" />
   <!-- SEO & Social -->
-  <meta content="EverVow | Premium Officiant Services" property="og:title"/>
-  <meta content="Personalized, elegant ceremony scripting and officiant services." property="og:description"/>
-  <meta content="website" property="og:type"/>
-  <link href="https://evervow.example.com" rel="canonical"/>
+  <meta content="Evervow | Premium Officiant Services" property="og:title" />
+  <meta content="Personalized, elegant ceremony scripting and officiant services." property="og:description" />
+  <meta content="website" property="og:type" />
+  <link href="https://evervow.example.com" rel="canonical" />
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest">
   </script>
   <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
   </script>
   <!-- Tailwind CSS (via CDN for vanilla setup as requested) -->
   <script src="https://cdn.tailwindcss.com">
   </script>
   <script>
-   tailwind.config = {
-            darkMode: 'class',
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: '#D4C5B9',
+              DEFAULT: '#8A7B6E',
+              dark: '#5A4E45',
+              primary: '#2C3E35', // Deep elegant green
+              secondary: '#D4AF37' // Champagne/Gold accent
+            },
             theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            light: '#D4C5B9',
-                            DEFAULT: '#8A7B6E',
-                            dark: '#5A4E45',
-                            primary: '#2C3E35', // Deep elegant green
-                            secondary: '#D4AF37' // Champagne/Gold accent
-                        },
-                        theme: {
-                            bg: '#FAF9F6',
-                            darkBg: '#121212'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
+              bg: '#FAF9F6',
+              darkBg: '#121212'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
         }
+      }
+    }
   </script>
   <style type="text/tailwindcss">
-   @layer base {
+    @layer base {
 
   html {
     scroll-behavior: smooth;
@@ -103,1152 +106,1421 @@
             .bg-theme-bg { background-color: theme('colors.theme.bg'); }
             .dark .bg-theme-bg { background-color: theme('colors.theme.darkBg'); }
         }
+
+        @media (max-width: 480px) {
+            .script-excerpt-footer {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.75rem !important;
+            }
+            .script-excerpt-footer span {
+                white-space: nowrap !important;
+                font-size: 0.75rem !important;
+                letter-spacing: 0.06em !important;
+            }
+            .script-excerpt-footer a {
+                align-self: flex-start !important;
+                font-size: 0.875rem !important;
+            }
+        }
   </style>
   <!-- Custom CSS -->
-  <link href="assets/css/style.css" rel="stylesheet"/>
-  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
- </head>
- <body class="bg-theme-bg text-gray-800 dark:text-gray-200 transition-colors duration-300 antialiased overflow-x-hidden">
+  <link href="assets/css/style.css?v=excerptalign" rel="stylesheet" />
+  <link href="favicon.svg" rel="icon" type="image/svg+xml" />
+</head>
+
+<body class="bg-theme-bg text-gray-800 dark:text-gray-200 transition-colors duration-300 antialiased overflow-x-hidden">
   <!-- HEADER (Global) -->
-  <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-theme-bg/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900/90" id="main-header">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-     <!-- Logo -->
-     <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity" href="index.html">
-      <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
-      </i>
-      <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-       EverVow
-      </span>
-     </a>
-     <!-- Desktop Nav -->
-     <nav class="hidden xl:flex space-x-8 rtl:space-x-reverse items-center">
-      <a class="nav-link text-brand-primary dark:text-white" href="index.html">
-       Home 1
-      </a>
-      <a class="nav-link" href="home-2.html">
-       Home 2
-      </a>
-      <a class="nav-link" href="about.html">
-       About
-      </a>
-      <a class="nav-link" href="services.html">
-       Services
-      </a>
-      <a class="nav-link" href="ceremony-styles.html">
-       Styles
-      </a>
-      <a class="nav-link" href="sample-scripts.html">
-       Scripts
-      </a>
-      <a class="nav-link" href="booking.html">
-       Booking
-      </a>
-      <a class="nav-link" href="contact.html">
-       Contact
-      </a>
-      <a class="nav-link" href="dashboard.html">
-       Dashboard
-      </a>
-     </nav>
-     <!-- Actions -->
-     <div class="hidden xl:flex items-center space-x-4 rtl:space-x-reverse">
-      <button aria-label="Toggle Dark Mode" class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-       <i class="w-5 h-5" data-lucide="moon">
-       </i>
-      </button>
-      <button aria-label="Toggle RTL" class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-       <i class="w-5 h-5" data-lucide="arrow-left-right">
-       </i>
-      </button>
-      <a class="btn-primary text-sm px-5 py-2" href="signup.html">
-       Signup
-      </a>
-     </div>
-     <!-- Mobile menu button -->
-     <div class="flex xl:hidden items-center gap-4">
-       <button aria-label="Toggle RTL" class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-        <i class="w-5 h-5" data-lucide="arrow-left-right">
-        </i>
-       </button>
-      <button aria-label="Toggle Dark Mode" class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-       <i class="w-5 h-5" data-lucide="moon">
-       </i>
-      </button>
-      <button aria-expanded="false" class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none" id="mobile-menu-btn">
-       <i class="w-6 h-6" data-lucide="menu">
-       </i>
-      </button>
-     </div>
+  <header
+    class="fixed w-full top-0 z-50 transition-all duration-300 bg-theme-bg/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900/90"
+    id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity" href="index.html">
+          <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
+          </i>
+          <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Evervow
+          </span>
+        </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden xl:flex space-x-8 rtl:space-x-reverse items-center">
+          <a class="nav-link text-brand-primary dark:text-white" href="index.html">
+            Home 1
+          </a>
+          <a class="nav-link" href="home-2.html">
+            Home 2
+          </a>
+          <a class="nav-link" href="about.html">
+            About
+          </a>
+          <a class="nav-link" href="services.html">
+            Services
+          </a>
+          <a class="nav-link" href="ceremony-styles.html">
+            Styles
+          </a>
+          <a class="nav-link" href="sample-scripts.html">
+            Scripts
+          </a>
+          <a class="nav-link" href="booking.html">
+            Booking
+          </a>
+          <a class="nav-link" href="contact.html">
+            Contact
+          </a>
+          <a class="nav-link" href="dashboard.html">
+            Dashboard
+          </a>
+        </nav>
+        <!-- Actions -->
+        <div class="hidden xl:flex items-center space-x-4 rtl:space-x-reverse">
+          <button aria-label="Toggle Dark Mode"
+            class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <i class="w-5 h-5" data-lucide="moon">
+            </i>
+          </button>
+          <button aria-label="Toggle RTL"
+            class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <i class="w-5 h-5" data-lucide="arrow-left-right">
+            </i>
+          </button>
+          <a class="btn-primary btn-nav" href="signup.html">
+            Signup
+          </a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="flex xl:hidden items-center gap-4">
+          <button aria-label="Toggle RTL"
+            class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <i class="w-5 h-5" data-lucide="arrow-left-right">
+            </i>
+          </button>
+          <button aria-label="Toggle Dark Mode"
+            class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <i class="w-5 h-5" data-lucide="moon">
+            </i>
+          </button>
+          <button aria-expanded="false"
+            class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none"
+            id="mobile-menu-btn">
+            <i class="w-6 h-6" data-lucide="menu">
+            </i>
+          </button>
+        </div>
+      </div>
     </div>
-   </div>
-   <!-- Mobile Menu Panel -->
-      <!-- Mobile Menu -->
-   <div class="hidden xl:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-     <a class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary dark:text-white bg-gray-50 dark:bg-gray-800" href="index.html">
-      Home 1
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="home-2.html">
-      Home 2
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="about.html">
-      About
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="services.html">
-      Services
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="ceremony-styles.html">
-      Styles
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="sample-scripts.html">
-      Scripts
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="booking.html">
-      Booking
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="contact.html">
-      Contact
-     </a>
-     <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800" href="dashboard.html">
-      Dashboard
-     </a>
-     <a class="block px-3 py-2 mt-4 text-center btn-primary w-full" href="signup.html">
-      Signup
-     </a>
+    <!-- Mobile Menu Panel -->
+    <!-- Mobile Menu -->
+    <div class="hidden xl:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800"
+      id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary dark:text-white bg-gray-50 dark:bg-gray-800"
+          href="index.html">
+          Home 1
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="home-2.html">
+          Home 2
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="about.html">
+          About
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="services.html">
+          Services
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="ceremony-styles.html">
+          Styles
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="sample-scripts.html">
+          Scripts
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="booking.html">
+          Booking
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="contact.html">
+          Contact
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-800"
+          href="dashboard.html">
+          Dashboard
+        </a>
+        <a class="block py-2.5 px-4 mt-4 text-center btn-primary btn-md w-full" href="signup.html">
+          Signup
+        </a>
+      </div>
     </div>
-   </div>
   </header>
   <main class="pt-20">
     <!-- SECTION 1: Premium Hero -->
     <section class="relative min-h-[92vh] flex items-center overflow-hidden">
-     <!-- Background Image -->
-     <div class="absolute inset-0 z-0">
-      <img alt="Elegant wedding ceremony with officiant and couple" class="w-full h-full object-cover object-center brightness-[0.85] dark:brightness-[0.4]" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;q=80&amp;w=2000"/>
-      <div class="absolute inset-0 bg-gradient-to-r from-theme-bg/95 via-theme-bg/80 to-theme-bg/30 dark:from-gray-900/95 dark:via-gray-900/80 dark:to-transparent">
-      </div>
-     </div>
-     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
-      <div class="max-w-3xl" data-aos="fade-up">
-       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-primary/10 dark:bg-brand-light/10 text-brand-primary dark:text-brand-light text-xs font-semibold uppercase tracking-widest mb-6">
-        <i class="w-4 h-4" data-lucide="sparkles"></i>
-        Bespoke Officiant Services &amp; Ceremony Scripting Studio
-       </div>
-       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight mb-6 text-gray-900 dark:text-white">
-        Ceremonies as
-        <br/>
-        <span class="italic text-brand-primary dark:text-brand-light">
-         Unique &amp; Unforgettable
-        </span>
-        as You
-       </h1>
-       <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl font-light leading-relaxed">
-        Whether you need an experienced licensed officiant at the altar, our interactive Wedding Script Generator to inspire your ceremony, bespoke vows, or polished bridal party speeches — EverVow brings warmth, poise, and literary elegance to your wedding day.
-       </p>
-       <div class="flex flex-wrap gap-4 items-center">
-        <a class="btn-primary" href="#packages">
-         <i class="w-4 h-4 mr-2" data-lucide="layers"></i>
-         Explore Wedding Packages
-        </a>
-        <a class="btn-secondary bg-white/70 backdrop-blur-sm dark:bg-gray-800/70" href="#script-generator">
-         <i class="w-4 h-4 mr-2" data-lucide="wand-2"></i>
-         Try Script Generator
-        </a>
-        <a class="btn-secondary bg-white/70 backdrop-blur-sm dark:bg-gray-800/70" href="sample-scripts.html">
-         <i class="w-4 h-4 mr-2" data-lucide="file-text"></i>
-         View Sample Scripts
-        </a>
-       </div>
-       <div class="mt-10 pt-8 border-t border-gray-200/60 dark:border-gray-800 flex flex-wrap items-center gap-6">
-        <div class="flex -space-x-3">
-         <img alt="Happy couple" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&amp;auto=format&amp;fit=crop"/>
-         <img alt="Wedding ceremony couple" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=100&amp;auto=format&amp;fit=crop"/>
-         <img alt="Real ceremony" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=100&amp;auto=format&amp;fit=crop"/>
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img alt="Joyful wedding ceremony celebration with couple and guests"
+          class="w-full h-full object-cover object-[52%_40%] brightness-100 dark:brightness-[0.4]"
+          src="https://images.unsplash.com/photo-1583939411023-14783179e581?auto=format&amp;fit=crop&amp;q=80&amp;w=2000" />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#FAF7F2]/75 via-[#FAF7F2]/40 to-[#FAF7F2]/65 md:bg-gradient-to-r rtl:md:bg-gradient-to-l md:from-[#FAF7F2] md:via-[#FAF7F2]/90 md:to-transparent dark:from-gray-950/80 dark:via-gray-950/55 dark:to-gray-950/80 md:dark:from-gray-950 md:dark:via-gray-950/85 md:dark:to-gray-900/30">
         </div>
-        <div class="text-sm font-medium text-gray-800 dark:text-gray-200">
-         <span class="text-brand-primary dark:text-brand-light font-bold text-base">500+</span> Real Ceremonies Celebrated &bull; 
-         <span class="text-brand-secondary font-semibold">&starf;&starf;&starf;&starf;&starf; 5.0 Rating</span>
-        </div>
-       </div>
       </div>
-     </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-20">
+        <div class="max-w-3xl" data-aos="fade-up">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-primary/10 dark:bg-brand-light/10 text-brand-primary dark:text-brand-light text-xs font-semibold uppercase tracking-widest mb-6">
+            <i class="w-4 h-4" data-lucide="sparkles"></i>
+            Bespoke Officiant Services &amp; Ceremony Scripting Studio
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight mb-6 text-gray-900 dark:text-white hero-mobile-legible">
+            Ceremonies as
+            <br />
+            <span class="italic text-brand-primary dark:text-brand-light">
+              Unique &amp; Unforgettable
+            </span>
+            as You
+          </h1>
+          <p class="hero-description mb-8 max-w-2xl font-normal text-gray-800 dark:text-gray-100 hero-mobile-legible">
+            Whether you need an experienced licensed officiant at the altar, our interactive Wedding Script Generator to
+            inspire your ceremony, bespoke vows, or polished bridal party speeches — Evervow brings warmth, poise, and
+            literary elegance to your wedding day.
+          </p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <a class="btn-primary cta-equal" href="#packages">
+              Explore Wedding Packages
+            </a>
+            <a class="btn-secondary cta-equal bg-white/70 backdrop-blur-sm dark:bg-gray-800/70"
+              href="#script-generator">
+              Try Script Generator
+            </a>
+            <a class="btn-secondary cta-equal bg-white/70 backdrop-blur-sm dark:bg-gray-800/70"
+              href="sample-scripts.html">
+              View Sample Scripts
+            </a>
+          </div>
+          <div class="mt-10 pt-8 border-t border-gray-200/60 dark:border-gray-800 flex flex-wrap items-center gap-6">
+            <div class="flex -space-x-3">
+              <img alt="Happy couple" class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&amp;auto=format&amp;fit=crop" />
+              <img alt="Wedding ceremony couple" class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=100&amp;auto=format&amp;fit=crop" />
+              <img alt="Real ceremony" class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&amp;auto=format&amp;fit=crop" />
+            </div>
+            <div class="text-sm font-medium text-gray-800 dark:text-gray-200">
+              <span class="text-brand-primary dark:text-brand-light font-bold text-base">500+</span> Real Ceremonies
+              Celebrated &bull;
+              <span class="text-brand-secondary font-semibold">&starf;&starf;&starf;&starf;&starf; 5.0 Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECTION 2: Interactive Wedding Script Generator Preview & Officiant Synergy -->
-    <section class="py-20 bg-gradient-to-b from-white to-theme-bg dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-800" id="script-generator">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
-       <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
-        Interactive Ceremony Studio
-       </span>
-       <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
-        Wedding Script Generator &amp; Officiant Synergy
-       </h2>
-       <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg">
-        Generate instant inspiration for your ceremony format or collaborate with our seasoned officiants to transform your draft into a living, unforgettable performance.
-       </p>
+    <section
+      class="py-20 bg-gradient-to-b from-white to-theme-bg dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-800"
+      id="script-generator">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+            Interactive Ceremony Studio
+          </span>
+          <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
+            Wedding Script Generator &amp; Officiant Synergy
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg">
+            Generate instant inspiration for your ceremony format or collaborate with our seasoned officiants to
+            transform your draft into a living, unforgettable performance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Generator Controls Box -->
+          <div
+            class="lg:col-span-5 bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
+            data-aos="fade-right">
+            <div class="flex items-center justify-between pb-4 mb-6 border-b border-gray-100 dark:border-gray-700">
+              <div class="flex items-center gap-2">
+                <i class="w-6 h-6 text-brand-primary dark:text-brand-light" data-lucide="sparkles"></i>
+                <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Live Script Generator</h3>
+              </div>
+              <span
+                class="text-xs bg-brand-primary/10 text-brand-primary dark:text-brand-light px-2.5 py-1 rounded-full font-medium">Interactive
+                Demo</span>
+            </div>
+
+            <form id="hero-script-generator-form" class="space-y-4"
+              onsubmit="event.preventDefault(); window.generateHeroScript();">
+              <div>
+                <label
+                  class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Couple
+                  Names</label>
+                <div class="grid grid-cols-2 gap-2">
+                  <input id="gen-partner1" type="text" value="Chloe" placeholder="Partner 1"
+                    class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none" />
+                  <input id="gen-partner2" type="text" value="Mark" placeholder="Partner 2"
+                    class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none" />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Ceremony
+                  Tone / Style</label>
+                <select id="gen-tone"
+                  class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none">
+                  <option value="modern">Modern, Romantic &amp; Secular</option>
+                  <option value="traditional">Traditional &amp; Classic Reverence</option>
+                  <option value="lighthearted">Warm, Joyful &amp; Storytelling</option>
+                  <option value="elopement">Intimate &amp; Poetic (Elopement)</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Unity
+                  Ritual</label>
+                <select id="gen-ritual"
+                  class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none">
+                  <option value="handfasting">Handfasting (Celtic Knot of Love)</option>
+                  <option value="candle">Unity Candle Lighting</option>
+                  <option value="wine">Love Letter &amp; Wine Box Capsule</option>
+                  <option value="sand">Blending of Sands</option>
+                  <option value="none">No Symbolic Ritual (Spoken Vows Only)</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Desired
+                  Ceremony Length</label>
+                <div class="grid grid-cols-3 gap-2" id="length-buttons">
+                  <button type="button"
+                    class="gen-len-btn py-2 px-2 text-xs font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-brand-primary bg-theme-bg dark:bg-gray-900 dark:text-white"
+                    data-len="15" onclick="setGenLength(15, this)">15 Min</button>
+                  <button type="button"
+                    class="gen-len-btn py-2 px-2 text-xs font-medium rounded-lg border border-brand-primary bg-brand-primary text-white"
+                    data-len="25" onclick="setGenLength(25, this)">25 Min</button>
+                  <button type="button"
+                    class="gen-len-btn py-2 px-2 text-xs font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-brand-primary bg-theme-bg dark:bg-gray-900 dark:text-white"
+                    data-len="35" onclick="setGenLength(35, this)">35 Min</button>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit"
+                  class="w-full btn-primary btn-lg flex items-center justify-center gap-2 shadow-lg">
+                  <i class="w-4 h-4" data-lucide="wand-2"></i>
+                  Generate Customized Script
+                </button>
+              </div>
+            </form>
+
+            <div
+              class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+              <span>Want humans to perfect this?</span>
+              <a href="booking.html"
+                class="font-semibold text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
+                Hire an Officiant &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Generated Script Live Display -->
+          <div
+            class="lg:col-span-7 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col h-[560px]"
+            data-aos="fade-left">
+            <div
+              class="bg-gray-50 dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex flex-wrap justify-between items-center gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+                <span class="text-xs font-medium text-gray-600 dark:text-gray-300" id="gen-script-badge">Modern Romantic
+                  Script Outline</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="sample-scripts.html"
+                  class="text-xs px-3 py-1.5 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-brand-primary hover:text-white transition-colors">
+                  View Sample Scripts
+                </a>
+                <a href="booking.html" class="btn-primary text-xs py-1.5 px-3">
+                  Customize Your Ceremony
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8 overflow-y-auto font-serif flex-1 leading-relaxed text-gray-800 dark:text-gray-200"
+              id="gen-output-container"
+              style="background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');">
+              <div class="text-center mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
+                <span
+                  class="text-xs uppercase tracking-widest font-sans text-brand-primary dark:text-brand-light font-bold">Curated
+                  Ceremony Script</span>
+                <h4 class="text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-white" id="gen-output-title">The
+                  Celebration of Chloe &amp; Mark</h4>
+                <p class="text-xs font-sans text-gray-500 dark:text-gray-400 mt-1" id="gen-output-meta">Approx.
+                  Duration: 25 Minutes &bull; Style: Secular &amp; Contemporary &bull; Ritual: Handfasting</p>
+              </div>
+
+              <div class="space-y-6 text-sm md:text-base" id="gen-output-body">
+                <div>
+                  <span
+                    class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">I.
+                    The Welcome &amp; Community Blessing</span>
+                  <p class="italic text-gray-700 dark:text-gray-300">
+                    "Family, friends, and loved ones: Welcome. We gather here beneath this open sky to witness the
+                    declaration of marriage between Chloe and Mark. In a fast-moving world, today is a sacred pause to
+                    celebrate deliberate, everyday love."
+                  </p>
+                </div>
+
+                <div>
+                  <span
+                    class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">II.
+                    The Couple's Love Story</span>
+                  <p class="italic text-gray-700 dark:text-gray-300">
+                    "Their journey did not start with grand grandiloquence, but with quiet compatibility, shared
+                    laughter, and an unshakable respect for each other's individuality. From their first shared coffee
+                    to building a home together, every step brought them toward this arch."
+                  </p>
+                </div>
+
+                <div>
+                  <span
+                    class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">III.
+                    Symbolic Ritual: The Handfasting</span>
+                  <p class="italic text-gray-700 dark:text-gray-300">
+                    "Officiant binds the couples' hands with intertwined cords: 'These are the hands that hold you in
+                    joy, the hands that steady you in adversity, and the hands that weave your days into a shared
+                    masterpiece.' (Couple gently ties the Celtic Knot)."
+                  </p>
+                </div>
+
+                <div>
+                  <span
+                    class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">IV.
+                    The Exchange of Vows &amp; Rings</span>
+                  <p class="italic text-gray-700 dark:text-gray-300">
+                    "'Chloe, I promise to choose you every day, in triumph and challenge, to listen without defense, and
+                    to grow beside you.' / 'Mark, with this ring, I promise you my honest heart, unconditional support,
+                    and lifelong partnership.'"
+                  </p>
+                </div>
+
+                <div>
+                  <span
+                    class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">V.
+                    Pronouncement &amp; The Kiss</span>
+                  <p class="italic text-gray-700 dark:text-gray-300">
+                    "'By the power vested in me and celebrated by all who cherish you, I pronounce you united as life
+                    partners. You may seal this sacred vow with a kiss!'"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Footer -->
+            <div
+              class="p-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <span class="text-gray-500 dark:text-gray-400">Want this script delivered by a licensed pro
+                officiant?</span>
+              <div class="flex gap-2">
+                <a href="booking.html" class="btn-primary text-xs py-2 px-4 shadow">
+                  Book an Officiant
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-       <!-- Generator Controls Box -->
-       <div class="lg:col-span-5 bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700" data-aos="fade-right">
-        <div class="flex items-center justify-between pb-4 mb-6 border-b border-gray-100 dark:border-gray-700">
-         <div class="flex items-center gap-2">
-          <i class="w-6 h-6 text-brand-primary dark:text-brand-light" data-lucide="sparkles"></i>
-          <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">Live Script Generator</h3>
-         </div>
-         <span class="text-xs bg-brand-primary/10 text-brand-primary dark:text-brand-light px-2.5 py-1 rounded-full font-medium">Interactive Demo</span>
-        </div>
-
-        <form id="hero-script-generator-form" class="space-y-4" onsubmit="event.preventDefault(); window.generateHeroScript();">
-         <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Couple Names</label>
-          <div class="grid grid-cols-2 gap-2">
-           <input id="gen-partner1" type="text" value="Chloe" placeholder="Partner 1" class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none"/>
-           <input id="gen-partner2" type="text" value="Mark" placeholder="Partner 2" class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none"/>
-          </div>
-         </div>
-
-         <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Ceremony Tone / Style</label>
-          <select id="gen-tone" class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none">
-           <option value="modern">Modern, Romantic &amp; Secular</option>
-           <option value="traditional">Traditional &amp; Classic Reverence</option>
-           <option value="lighthearted">Warm, Joyful &amp; Storytelling</option>
-           <option value="elopement">Intimate &amp; Poetic (Elopement)</option>
-          </select>
-         </div>
-
-         <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Unity Ritual</label>
-          <select id="gen-ritual" class="w-full text-sm p-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-theme-bg dark:bg-gray-900 focus:ring-2 focus:ring-brand-primary dark:text-white outline-none">
-           <option value="handfasting">Handfasting (Celtic Knot of Love)</option>
-           <option value="candle">Unity Candle Lighting</option>
-           <option value="wine">Love Letter &amp; Wine Box Capsule</option>
-           <option value="sand">Blending of Sands</option>
-           <option value="none">No Symbolic Ritual (Spoken Vows Only)</option>
-          </select>
-         </div>
-
-         <div>
-          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-300 mb-1.5">Desired Ceremony Length</label>
-          <div class="grid grid-cols-3 gap-2" id="length-buttons">
-           <button type="button" class="gen-len-btn py-2 px-2 text-xs font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-brand-primary bg-theme-bg dark:bg-gray-900 dark:text-white" data-len="15" onclick="setGenLength(15, this)">15 Min</button>
-           <button type="button" class="gen-len-btn py-2 px-2 text-xs font-medium rounded-lg border border-brand-primary bg-brand-primary text-white" data-len="25" onclick="setGenLength(25, this)">25 Min</button>
-           <button type="button" class="gen-len-btn py-2 px-2 text-xs font-medium rounded-lg border border-gray-300 dark:border-gray-600 hover:border-brand-primary bg-theme-bg dark:bg-gray-900 dark:text-white" data-len="35" onclick="setGenLength(35, this)">35 Min</button>
-          </div>
-         </div>
-
-         <div class="pt-2">
-          <button type="submit" class="w-full btn-primary py-3 text-sm flex items-center justify-center gap-2 shadow-lg">
-           <i class="w-4 h-4" data-lucide="wand-2"></i>
-           Generate Customized Script
-          </button>
-         </div>
-        </form>
-
-        <div class="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-         <span>Want humans to perfect this?</span>
-         <a href="booking.html" class="font-semibold text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
-          Hire an Officiant &rarr;
-         </a>
-        </div>
-       </div>
-
-       <!-- Generated Script Live Display -->
-       <div class="lg:col-span-7 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col h-[560px]" data-aos="fade-left">
-        <div class="bg-gray-50 dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex flex-wrap justify-between items-center gap-2">
-         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-          <span class="text-xs font-medium text-gray-600 dark:text-gray-300" id="gen-script-badge">Modern Romantic Script Outline</span>
-         </div>
-         <div class="flex items-center gap-2">
-          <a href="sample-scripts.html" class="text-xs px-3 py-1.5 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-brand-primary hover:text-white transition-colors">
-           View Sample Scripts
-          </a>
-          <a href="booking.html" class="btn-primary text-xs py-1.5 px-3">
-           Customize Your Ceremony
-          </a>
-         </div>
-        </div>
-
-        <div class="p-6 md:p-8 overflow-y-auto font-serif flex-1 leading-relaxed text-gray-800 dark:text-gray-200" id="gen-output-container" style="background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');">
-         <div class="text-center mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
-          <span class="text-xs uppercase tracking-widest font-sans text-brand-secondary font-bold">Curated Ceremony Script</span>
-          <h4 class="text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-white" id="gen-output-title">The Celebration of Chloe &amp; Mark</h4>
-          <p class="text-xs font-sans text-gray-500 dark:text-gray-400 mt-1" id="gen-output-meta">Approx. Duration: 25 Minutes &bull; Style: Secular &amp; Contemporary &bull; Ritual: Handfasting</p>
-         </div>
-
-         <div class="space-y-6 text-sm md:text-base" id="gen-output-body">
-          <div>
-           <span class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">I. The Welcome &amp; Community Blessing</span>
-           <p class="italic text-gray-700 dark:text-gray-300">
-            "Family, friends, and loved ones: Welcome. We gather here beneath this open sky to witness the declaration of marriage between Chloe and Mark. In a fast-moving world, today is a sacred pause to celebrate deliberate, everyday love."
-           </p>
-          </div>
-
-          <div>
-           <span class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">II. The Couple's Love Story</span>
-           <p class="italic text-gray-700 dark:text-gray-300">
-            "Their journey did not start with grand grandiloquence, but with quiet compatibility, shared laughter, and an unshakable respect for each other's individuality. From their first shared coffee to building a home together, every step brought them toward this arch."
-           </p>
-          </div>
-
-          <div>
-           <span class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">III. Symbolic Ritual: The Handfasting</span>
-           <p class="italic text-gray-700 dark:text-gray-300">
-            "Officiant binds the couples' hands with intertwined cords: 'These are the hands that hold you in joy, the hands that steady you in adversity, and the hands that weave your days into a shared masterpiece.' (Couple gently ties the Celtic Knot)."
-           </p>
-          </div>
-
-          <div>
-           <span class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">IV. The Exchange of Vows &amp; Rings</span>
-           <p class="italic text-gray-700 dark:text-gray-300">
-            "'Chloe, I promise to choose you every day, in triumph and challenge, to listen without defense, and to grow beside you.' / 'Mark, with this ring, I promise you my honest heart, unconditional support, and lifelong partnership.'"
-           </p>
-          </div>
-
-          <div>
-           <span class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">V. Pronouncement &amp; The Kiss</span>
-           <p class="italic text-gray-700 dark:text-gray-300">
-            "'By the power vested in me and celebrated by all who cherish you, I pronounce you united as life partners. You may seal this sacred vow with a kiss!'"
-           </p>
-          </div>
-         </div>
-        </div>
-
-        <!-- Action Footer -->
-        <div class="p-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between gap-3 text-xs">
-         <span class="text-gray-500 dark:text-gray-400">Want this script delivered by a licensed pro officiant?</span>
-         <div class="flex gap-2">
-          <a href="booking.html" class="btn-primary text-xs py-2 px-4 shadow">
-           Book an Officiant
-          </a>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
     </section>
 
     <!-- SECTION 3: Ceremony Types & Formats -->
     <section class="py-24 bg-white dark:bg-gray-800" id="ceremony-types">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-       <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
-        Diverse Formats &amp; Traditions
-       </span>
-       <h2 class="text-3xl md:text-4xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
-        Types of Ceremonies We Conduct &amp; Script
-       </h2>
-       <p class="text-gray-600 dark:text-gray-400">
-        Every couple's background and dynamic is one-of-a-kind. We specialize in five core ceremony formats crafted with deep cultural reverence and contemporary elegance.
-       </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+            Diverse Formats &amp; Traditions
+          </span>
+          <h2 class="text-3xl md:text-4xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
+            Types of Ceremonies We Conduct &amp; Script
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Every couple's background and dynamic is one-of-a-kind. We specialize in five core ceremony formats crafted
+            with deep cultural reverence and contemporary elegance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Format 1 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="book-open"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Traditional &amp; Classic
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                Timeless structure honoring heritage, formal vows, family blessings, and cultural or religious rituals
+                (such as breaking the glass, unity candles, or scripture readings).
+              </p>
+              <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Formal procession &amp; declaration of intent</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Heritage readings &amp; ring exchange</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Typical length: 25-35 minutes</li>
+              </ul>
+            </div>
+            <a href="ceremony-styles.html"
+              class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
+              Explore Format &rarr;
+            </a>
+          </div>
+
+          <!-- Format 2 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="heart-handshake"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Secular &amp; Contemporary
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                Non-religious ceremonies centered purely on your unique relationship, shared morals, personal journey,
+                inside jokes, and modern values without dogma.
+              </p>
+              <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Couple-centric love narrative</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Poetic literature &amp; personal vows</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Typical length: 20-25 minutes</li>
+              </ul>
+            </div>
+            <a href="ceremony-styles.html"
+              class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
+              Explore Format &rarr;
+            </a>
+          </div>
+
+          <!-- Format 3 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="compass"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Elopements &amp; Micro-Weddings
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                Intimate, profound services for 2 to 25 guests. Whether on a cliffside, national park, or urban rooftop,
+                we deliver concise, heart-stirring ceremonies.
+              </p>
+              <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Mobile travel-ready licensed officiants</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Deeply intimate &amp; emotional tone</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Typical length: 15-20 minutes</li>
+              </ul>
+            </div>
+            <a href="ceremony-styles.html"
+              class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
+              Explore Format &rarr;
+            </a>
+          </div>
+
+          <!-- Format 4 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="infinity"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Interfaith &amp; Multicultural
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                Masterfully harmonizing different faiths, family backgrounds, and customs into one fluid, welcoming
+                ceremony that honors both families equally.
+              </p>
+              <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Dual tradition integration</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Multilingual segments available</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Typical length: 30 minutes</li>
+              </ul>
+            </div>
+            <a href="ceremony-styles.html"
+              class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
+              Explore Format &rarr;
+            </a>
+          </div>
+
+          <!-- Format 5 -->
+          <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="500">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
+                <i class="w-6 h-6" data-lucide="refresh-cw"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Vow Renewals &amp; Reaffirmations
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                Reaffirming years of commitment, overcoming milestones together, and celebrating children or community
+                alongside your enduring devotion.
+              </p>
+              <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Re-dedication of rings</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Family inclusion rituals</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Typical length: 20-25 minutes</li>
+              </ul>
+            </div>
+            <a href="ceremony-styles.html"
+              class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
+              Explore Format &rarr;
+            </a>
+          </div>
+
+          <!-- Format 6: Custom Blank Canvas -->
+          <div
+            class="card p-8 flex flex-col justify-between border-2 border-brand-primary/30 bg-brand-primary/5 dark:bg-brand-primary/10"
+            data-aos="fade-up" data-aos-delay="600">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-primary text-white flex items-center justify-center mb-6 shadow">
+                <i class="w-6 h-6" data-lucide="pen-tool"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
+                Bespoke Custom Ceremony
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+                A 100% ground-up literary composition. We conduct private interview sessions, draft original metaphors,
+                incorporate unique symbolic rituals, and rehearse every cue.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Unlimited script revisions in portal</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  On-site rehearsal coordination included</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Keepsake printed folio</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-primary btn-sm px-4 text-center">
+              Customize Your Ceremony
+            </a>
+          </div>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-       <!-- Format 1 -->
-       <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
-        <div>
-         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
-          <i class="w-6 h-6" data-lucide="book-open"></i>
-         </div>
-         <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
-          Traditional &amp; Classic
-         </h3>
-         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-          Timeless structure honoring heritage, formal vows, family blessings, and cultural or religious rituals (such as breaking the glass, unity candles, or scripture readings).
-         </p>
-         <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Formal procession &amp; declaration of intent</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Heritage readings &amp; ring exchange</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Typical length: 25-35 minutes</li>
-         </ul>
-        </div>
-        <a href="ceremony-styles.html" class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
-         Explore Format &rarr;
-        </a>
-       </div>
-
-       <!-- Format 2 -->
-       <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
-        <div>
-         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
-          <i class="w-6 h-6" data-lucide="heart-handshake"></i>
-         </div>
-         <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
-          Secular &amp; Contemporary
-         </h3>
-         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-          Non-religious ceremonies centered purely on your unique relationship, shared morals, personal journey, inside jokes, and modern values without dogma.
-         </p>
-         <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Couple-centric love narrative</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Poetic literature &amp; personal vows</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Typical length: 20-25 minutes</li>
-         </ul>
-        </div>
-        <a href="ceremony-styles.html" class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
-         Explore Format &rarr;
-        </a>
-       </div>
-
-       <!-- Format 3 -->
-       <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
-        <div>
-         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
-          <i class="w-6 h-6" data-lucide="compass"></i>
-         </div>
-         <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
-          Elopements &amp; Micro-Weddings
-         </h3>
-         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-          Intimate, profound services for 2 to 25 guests. Whether on a cliffside, national park, or urban rooftop, we deliver concise, heart-stirring ceremonies.
-         </p>
-         <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Mobile travel-ready licensed officiants</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Deeply intimate &amp; emotional tone</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Typical length: 15-20 minutes</li>
-         </ul>
-        </div>
-        <a href="ceremony-styles.html" class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
-         Explore Format &rarr;
-        </a>
-       </div>
-
-       <!-- Format 4 -->
-       <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
-        <div>
-         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
-          <i class="w-6 h-6" data-lucide="infinity"></i>
-         </div>
-         <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
-          Interfaith &amp; Multicultural
-         </h3>
-         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-          Masterfully harmonizing different faiths, family backgrounds, and customs into one fluid, welcoming ceremony that honors both families equally.
-         </p>
-         <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Dual tradition integration</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Multilingual segments available</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Typical length: 30 minutes</li>
-         </ul>
-        </div>
-        <a href="ceremony-styles.html" class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
-         Explore Format &rarr;
-        </a>
-       </div>
-
-       <!-- Format 5 -->
-       <div class="card p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="500">
-        <div>
-         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center mb-6">
-          <i class="w-6 h-6" data-lucide="refresh-cw"></i>
-         </div>
-         <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
-          Vow Renewals &amp; Reaffirmations
-         </h3>
-         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-          Reaffirming years of commitment, overcoming milestones together, and celebrating children or community alongside your enduring devotion.
-         </p>
-         <ul class="text-xs text-gray-500 dark:text-gray-400 space-y-2 mb-6">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Re-dedication of rings</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Family inclusion rituals</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Typical length: 20-25 minutes</li>
-         </ul>
-        </div>
-        <a href="ceremony-styles.html" class="font-semibold text-sm text-brand-primary dark:text-brand-light hover:underline flex items-center gap-1">
-         Explore Format &rarr;
-        </a>
-       </div>
-
-       <!-- Format 6: Custom Blank Canvas -->
-       <div class="card p-8 flex flex-col justify-between border-2 border-brand-primary/30 bg-brand-primary/5 dark:bg-brand-primary/10" data-aos="fade-up" data-aos-delay="600">
-        <div>
-         <div class="w-12 h-12 rounded-xl bg-brand-primary text-white flex items-center justify-center mb-6 shadow">
-          <i class="w-6 h-6" data-lucide="pen-tool"></i>
-         </div>
-         <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-3">
-          Bespoke Custom Ceremony
-         </h3>
-         <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-          A 100% ground-up literary composition. We conduct private interview sessions, draft original metaphors, incorporate unique symbolic rituals, and rehearse every cue.
-         </p>
-         <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-2 mb-6">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Unlimited script revisions in portal</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> On-site rehearsal coordination included</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Keepsake printed folio</li>
-         </ul>
-        </div>
-        <a href="booking.html" class="btn-primary text-xs py-2.5 px-4 text-center">
-         Customize Your Ceremony
-        </a>
-       </div>
-      </div>
-     </div>
     </section>
 
     <!-- SECTION 4: Comprehensive Officiant & Scripting Packages -->
     <section class="py-24 bg-theme-bg dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800" id="packages">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-       <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
-        Transparent Pricing &amp; Value
-       </span>
-       <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
-        Available Wedding Packages
-       </h2>
-       <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg">
-        Compare our curated packages combining licensed officiant presentation, custom ceremony scripting, and vow writing guidance.
-       </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+            Transparent Pricing &amp; Value
+          </span>
+          <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
+            Available Wedding Packages
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg">
+            Compare our curated packages combining licensed officiant presentation, custom ceremony scripting, and vow
+            writing guidance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch pt-4">
+          <!-- Package 1: Elopement -->
+          <div class="card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <span
+                class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Intimate</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">Elopement</h3>
+              <div class="mt-4 mb-6">
+                <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$450</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">For weddings up to 20 guests</span>
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
+                Short, sweet, and profoundly meaningful for intimate ceremonies anywhere.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  30-min discovery session</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Sweet &amp; simple script</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Licensed officiant delivery</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Expedited marriage license filing</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-secondary btn-sm w-full text-center">
+              Book an Officiant
+            </a>
+          </div>
+
+          <!-- Package 2: Classic -->
+          <div class="card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <span
+                class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Timeless</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">The Classic</h3>
+              <div class="mt-4 mb-6">
+                <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$650</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">Standard full wedding ceremony</span>
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
+                Traditional elegance with customized classic readings, vows, and officiant delivery.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  60-min in-depth consultation</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Custom classic ceremony script</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 2
+                  rounds of script revisions</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Officiating &amp; legal filing</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-secondary btn-sm w-full text-center">
+              Book an Officiant
+            </a>
+          </div>
+
+          <!-- Package 3: Contemporary Popular -->
+          <div
+            class="card !overflow-visible p-6 flex flex-col justify-between border-2 border-brand-primary relative shadow-xl"
+            data-aos="fade-up" data-aos-delay="300" style="overflow: visible !important;">
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md z-20 whitespace-nowrap"
+              style="top: -12px;">
+              Most Popular
+            </div>
+            <div>
+              <span
+                class="text-xs font-semibold text-brand-primary dark:text-brand-light uppercase tracking-wider">Modern
+                Story</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">Contemporary</h3>
+              <div class="mt-4 mb-6">
+                <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$750</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">Full secular &amp; narrative
+                  ceremony</span>
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
+                Highly personalized story-driven ceremony capturing your dynamic journey and humor.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  90-min couple discovery interview</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Fully personalized secular script</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Portal collaboration &amp; vow support</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Professional licensed officiant</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-primary btn-sm w-full text-center">
+              Customize Your Ceremony
+            </a>
+          </div>
+
+          <!-- Package 4: Signature Bespoke -->
+          <div
+            class="card p-6 flex flex-col justify-between bg-gradient-to-b from-white to-amber-50/20 dark:from-gray-800 dark:to-gray-800/80"
+            data-aos="fade-up" data-aos-delay="400">
+            <div>
+              <span class="text-xs font-semibold text-brand-primary dark:text-brand-light uppercase tracking-wider">Full
+                Luxury</span>
+              <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">Signature</h3>
+              <div class="mt-4 mb-6">
+                <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$1,200</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">Ground-up bespoke + rehearsal</span>
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
+                Our premier white-glove experience with ground-up literary composition and full rehearsal direction.
+              </p>
+              <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Unlimited consultations &amp; revisions</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Bespoke ground-up script creation</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  1-Hour on-site rehearsal direction</li>
+                <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i>
+                  Keepsake embossed ceremony book</li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn-primary btn-sm w-full text-center">
+              Book an Officiant
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="services.html" class="btn-secondary btn-md inline-flex items-center gap-2">
+            <span>Explore All Package Details &amp; Add-ons</span>
+            <i class="w-4 h-4" data-lucide="arrow-right"></i>
+          </a>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-       <!-- Package 1: Elopement -->
-       <div class="card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
-        <div>
-         <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Intimate</span>
-         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">Elopement</h3>
-         <div class="mt-4 mb-6">
-          <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$450</span>
-          <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">For weddings up to 20 guests</span>
-         </div>
-         <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
-          Short, sweet, and profoundly meaningful for intimate ceremonies anywhere.
-         </p>
-         <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 30-min discovery session</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Sweet &amp; simple script</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Licensed officiant delivery</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Expedited marriage license filing</li>
-         </ul>
-        </div>
-        <a href="booking.html" class="btn-secondary w-full text-center text-xs py-2.5">
-         Book an Officiant
-        </a>
-       </div>
-
-       <!-- Package 2: Classic -->
-       <div class="card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
-        <div>
-         <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Timeless</span>
-         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">The Classic</h3>
-         <div class="mt-4 mb-6">
-          <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$650</span>
-          <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">Standard full wedding ceremony</span>
-         </div>
-         <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
-          Traditional elegance with customized classic readings, vows, and officiant delivery.
-         </p>
-         <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 60-min in-depth consultation</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Custom classic ceremony script</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 2 rounds of script revisions</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Officiating &amp; legal filing</li>
-         </ul>
-        </div>
-        <a href="booking.html" class="btn-secondary w-full text-center text-xs py-2.5">
-         Book an Officiant
-        </a>
-       </div>
-
-       <!-- Package 3: Contemporary Popular -->
-       <div class="card p-6 flex flex-col justify-between border-2 border-brand-primary relative shadow-xl" data-aos="fade-up" data-aos-delay="300">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
-         Most Popular
-        </div>
-        <div>
-         <span class="text-xs font-semibold text-brand-primary dark:text-brand-light uppercase tracking-wider">Modern Story</span>
-         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">The Contemporary</h3>
-         <div class="mt-4 mb-6">
-          <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$750</span>
-          <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">Full secular &amp; narrative ceremony</span>
-         </div>
-         <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
-          Highly personalized story-driven ceremony capturing your dynamic journey and humor.
-         </p>
-         <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 90-min couple discovery interview</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Fully personalized secular script</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Portal collaboration &amp; vow support</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Professional licensed officiant</li>
-         </ul>
-        </div>
-        <a href="booking.html" class="btn-primary w-full text-center text-xs py-2.5">
-         Customize Your Ceremony
-        </a>
-       </div>
-
-       <!-- Package 4: Signature Bespoke -->
-       <div class="card p-6 flex flex-col justify-between bg-gradient-to-b from-white to-amber-50/20 dark:from-gray-800 dark:to-gray-800/80" data-aos="fade-up" data-aos-delay="400">
-        <div>
-         <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Full Luxury</span>
-         <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mt-1">Signature Custom</h3>
-         <div class="mt-4 mb-6">
-          <span class="text-4xl font-serif font-bold text-brand-primary dark:text-brand-light">$1,200</span>
-          <span class="text-xs text-gray-500 dark:text-gray-400 block mt-1">Ground-up bespoke + rehearsal</span>
-         </div>
-         <p class="text-xs text-gray-600 dark:text-gray-400 mb-6">
-          Our premier white-glove experience with ground-up literary composition and full rehearsal direction.
-         </p>
-         <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-3 mb-8">
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Unlimited consultations &amp; revisions</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Bespoke ground-up script creation</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> 1-Hour on-site rehearsal direction</li>
-          <li class="flex items-center gap-2"><i class="w-4 h-4 text-brand-secondary" data-lucide="check"></i> Keepsake embossed ceremony book</li>
-         </ul>
-        </div>
-        <a href="booking.html" class="btn-primary w-full text-center text-xs py-2.5">
-         Book an Officiant
-        </a>
-       </div>
-      </div>
-
-      <div class="mt-12 text-center">
-       <a href="services.html" class="btn-secondary inline-flex items-center gap-2">
-        <span>Explore All Package Details &amp; Add-ons</span>
-        <i class="w-4 h-4" data-lucide="arrow-right"></i>
-       </a>
-      </div>
-     </div>
     </section>
 
     <!-- SECTION 5: Speech & Vow Options -->
     <section class="py-24 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-       <div data-aos="fade-right">
-        <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
-         Beyond The Ceremony
-        </span>
-        <h2 class="text-3xl md:text-4xl font-serif text-gray-900 dark:text-white mt-2 mb-6">
-         Speech Writing, Vow Coaching &amp; Toasts
-        </h2>
-        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-         A great celebration involves more than just the altar. We provide dedicated coaching, speech ghostwriting, and editing for everyone stepping up to the microphone.
-        </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div data-aos="fade-right">
+            <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+              Beyond The Ceremony
+            </span>
+            <h2 class="text-3xl md:text-4xl font-serif text-gray-900 dark:text-white mt-2 mb-6">
+              Speech Writing, Vow Coaching &amp; Toasts
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+              A great celebration involves more than just the altar. We provide dedicated coaching, speech ghostwriting,
+              and editing for everyone stepping up to the microphone.
+            </p>
 
-        <div class="space-y-6">
-         <div class="flex items-start gap-4 p-4 rounded-xl bg-theme-bg dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-          <div class="w-10 h-10 rounded-lg bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center shrink-0">
-           <i class="w-5 h-5" data-lucide="edit-3"></i>
-          </div>
-          <div>
-           <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Personal Vow Writing Coaching</h4>
-           <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Private 1-on-1 brainstorming, structural editing, and tone matching so both partners' vows harmonize beautifully without giving away the surprise.</p>
-          </div>
-         </div>
+            <div class="space-y-6">
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl bg-theme-bg dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div
+                  class="w-10 h-10 rounded-lg bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center shrink-0">
+                  <i class="w-5 h-5" data-lucide="edit-3"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Personal Vow Writing Coaching
+                  </h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Private 1-on-1 brainstorming, structural
+                    editing, and tone matching so both partners' vows harmonize beautifully without giving away the
+                    surprise.</p>
+                </div>
+              </div>
 
-         <div class="flex items-start gap-4 p-4 rounded-xl bg-theme-bg dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-          <div class="w-10 h-10 rounded-lg bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center shrink-0">
-           <i class="w-5 h-5" data-lucide="mic"></i>
-          </div>
-          <div>
-           <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Maid of Honor &amp; Best Man Speeches</h4>
-           <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Transform anxious bridal party speakers into confident storytellers with a balanced 4-minute speech full of warmth, humor, and respect.</p>
-          </div>
-         </div>
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl bg-theme-bg dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div
+                  class="w-10 h-10 rounded-lg bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center shrink-0">
+                  <i class="w-5 h-5" data-lucide="mic"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Maid of Honor &amp; Best Man
+                    Speeches</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Transform anxious bridal party speakers into
+                    confident storytellers with a balanced 4-minute speech full of warmth, humor, and respect.</p>
+                </div>
+              </div>
 
-         <div class="flex items-start gap-4 p-4 rounded-xl bg-theme-bg dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
-          <div class="w-10 h-10 rounded-lg bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center shrink-0">
-           <i class="w-5 h-5" data-lucide="users"></i>
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl bg-theme-bg dark:bg-gray-900 border border-gray-100 dark:border-gray-800">
+                <div
+                  class="w-10 h-10 rounded-lg bg-brand-primary/10 text-brand-primary dark:text-brand-light flex items-center justify-center shrink-0">
+                  <i class="w-5 h-5" data-lucide="users"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Parent of the Bride/Groom
+                    Welcome Toasts</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Heartfelt, poignant welcome remarks honoring
+                    both families, traditions, and the welcoming of a new son or daughter-in-law.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="services.html" class="btn-primary btn-md cta-equal">
+                Explore Speech Options
+              </a>
+              <a href="sample-scripts.html" class="btn-secondary btn-md cta-equal">
+                View Sample Scripts
+              </a>
+            </div>
           </div>
-          <div>
-           <h4 class="font-serif text-lg font-bold text-gray-900 dark:text-white">Parent of the Bride/Groom Welcome Toasts</h4>
-           <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Heartfelt, poignant welcome remarks honoring both families, traditions, and the welcoming of a new son or daughter-in-law.</p>
+
+          <div class="relative" data-aos="fade-left">
+            <img alt="Joyful bride and groom wedding speech and toast"
+              class="rounded-2xl shadow-2xl w-full h-[520px] object-cover object-top"
+              src="assets/images/wedding-speech.jpg" />
+            <div
+              class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 max-w-xs hidden sm:block">
+              <div class="flex items-center gap-3 mb-2">
+                <i class="w-5 h-5 text-brand-secondary" data-lucide="clock"></i>
+                <span class="font-serif font-bold text-sm text-gray-900 dark:text-white">The Golden Speech Rule</span>
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                3 to 5 minutes is the sweet spot. We ensure every anecdote lands with laughter and every toast raises
+                glasses with love.
+              </p>
+            </div>
           </div>
-         </div>
         </div>
-
-        <div class="mt-8 flex gap-4">
-         <a href="services.html" class="btn-primary text-sm">
-          Explore Speech Options
-         </a>
-         <a href="sample-scripts.html" class="btn-secondary text-sm">
-          View Sample Scripts
-         </a>
-        </div>
-       </div>
-
-       <div class="relative" data-aos="fade-left">
-        <img alt="Best man giving heartfelt speech" class="rounded-2xl shadow-2xl w-full h-[520px] object-cover" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
-        <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 max-w-xs hidden sm:block">
-         <div class="flex items-center gap-3 mb-2">
-          <i class="w-5 h-5 text-brand-secondary" data-lucide="clock"></i>
-          <span class="font-serif font-bold text-sm text-gray-900 dark:text-white">The Golden Speech Rule</span>
-         </div>
-         <p class="text-xs text-gray-600 dark:text-gray-400">
-          3 to 5 minutes is the sweet spot. We ensure every anecdote lands with laughter and every toast raises glasses with love.
-         </p>
-        </div>
-       </div>
       </div>
-     </div>
     </section>
 
     <!-- SECTION 6: Real Ceremonies Gallery & Authentic Couples -->
     <section class="py-24 bg-theme-bg dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-       <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
-        Memories Captured
-       </span>
-       <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
-        Real Ceremonies We've Brought to Life
-       </h2>
-       <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg">
-        Witness the smiles, the quiet tears of joy, and the genuine camaraderie that comes from thoughtful scripting and confident, warm officiation.
-       </p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">
+            Memories Captured
+          </span>
+          <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mt-2 mb-4">
+            Real Ceremonies We've Brought to Life
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg">
+            Witness the smiles, the quiet tears of joy, and the genuine camaraderie that comes from thoughtful scripting
+            and confident, warm officiation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Photo 1 -->
+          <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-72 overflow-hidden">
+              <img alt="Real oceanfront ceremony"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=800&amp;q=80" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity">
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-2.5 py-0.5 mb-1.5 text-[11px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white rounded-full border border-white/25 shadow-sm">Coastal
+                  Botanical Garden</span>
+                <h4 class="font-serif text-lg font-bold">Elena &amp; David</h4>
+                <p class="text-xs text-white/80 mt-1">Secular &amp; Contemporary Ceremony &bull; Handfasting Ritual</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-72 overflow-hidden">
+              <img alt="Real church classic wedding"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.pexels.com/photos/31070313/pexels-photo-31070313.jpeg" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity">
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-2.5 py-0.5 mb-1.5 text-[11px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white rounded-full border border-white/25 shadow-sm">Historic
+                  Cathedral</span>
+                <h4 class="font-serif text-lg font-bold">Sarah &amp; Michael</h4>
+                <p class="text-xs text-white/80 mt-1">Traditional Package &bull; Scripture Readings &amp; Classic Vows
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative h-72 overflow-hidden">
+              <img alt="Mountain cliffside elopement"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.pexels.com/photos/15898046/pexels-photo-15898046.jpeg" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity">
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-2.5 py-0.5 mb-1.5 text-[11px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white rounded-full border border-white/25 shadow-sm">Pacific
+                  Northwest Ridge</span>
+                <h4 class="font-serif text-lg font-bold">Liam &amp; Maya</h4>
+                <p class="text-xs text-white/80 mt-1">Elopement Ceremony &bull; Private Sunset Exchange</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+            <div class="relative h-72 overflow-hidden">
+              <img alt="Rustic barn wedding vows"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.pexels.com/photos/12178592/pexels-photo-12178592.jpeg" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity">
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-2.5 py-0.5 mb-1.5 text-[11px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white rounded-full border border-white/25 shadow-sm">Hudson
+                  Valley Estate</span>
+                <h4 class="font-serif text-lg font-bold">Olivia &amp; Marcus</h4>
+                <p class="text-xs text-white/80 mt-1">The Contemporary Package &bull; Wine Box Capsule</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 5 -->
+          <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+            <div class="relative h-72 overflow-hidden">
+              <img alt="Writing custom vows"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.pexels.com/photos/17361439/pexels-photo-17361439.jpeg" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity">
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-2.5 py-0.5 mb-1.5 text-[11px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white rounded-full border border-white/25 shadow-sm">Bespoke
+                  Ceremony Folio</span>
+                <h4 class="font-serif text-lg font-bold">Julian &amp; Noah</h4>
+                <p class="text-xs text-white/80 mt-1">Signature Custom &bull; Rehearsal Direction Included</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo 6 -->
+          <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+            <div class="relative h-72 overflow-hidden">
+              <img alt="20th anniversary vow renewal"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                src="https://images.pexels.com/photos/27268895/pexels-photo-27268895.jpeg" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity">
+              </div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span
+                  class="inline-block px-2.5 py-0.5 mb-1.5 text-[11px] font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-md text-white rounded-full border border-white/25 shadow-sm">Meadowbrook
+                  Country Club</span>
+                <h4 class="font-serif text-lg font-bold">Claire &amp; Robert</h4>
+                <p class="text-xs text-white/80 mt-1">20th Vow Renewal &bull; Children Blessing Ring Ceremony</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-       <!-- Photo 1 -->
-       <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-        <div class="relative h-72 overflow-hidden">
-         <img alt="Real oceanfront ceremony" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Coastal Botanical Garden</span>
-          <h4 class="font-serif text-lg font-bold">Elena &amp; David</h4>
-          <p class="text-xs text-white/80 mt-1">Secular &amp; Contemporary Ceremony &bull; Handfasting Ritual</p>
-         </div>
-        </div>
-       </div>
-
-       <!-- Photo 2 -->
-       <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative h-72 overflow-hidden">
-         <img alt="Real church classic wedding" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.pexels.com/photos/31070313/pexels-photo-31070313.jpeg"/>
-         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Historic Cathedral</span>
-          <h4 class="font-serif text-lg font-bold">Sarah &amp; Michael</h4>
-          <p class="text-xs text-white/80 mt-1">Traditional Package &bull; Scripture Readings &amp; Classic Vows</p>
-         </div>
-        </div>
-       </div>
-
-       <!-- Photo 3 -->
-       <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-        <div class="relative h-72 overflow-hidden">
-         <img alt="Mountain cliffside elopement" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.pexels.com/photos/15898046/pexels-photo-15898046.jpeg"/>
-         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Pacific Northwest Ridge</span>
-          <h4 class="font-serif text-lg font-bold">Liam &amp; Maya</h4>
-          <p class="text-xs text-white/80 mt-1">Elopement Ceremony &bull; Private Sunset Exchange</p>
-         </div>
-        </div>
-       </div>
-
-       <!-- Photo 4 -->
-       <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-        <div class="relative h-72 overflow-hidden">
-         <img alt="Rustic barn wedding vows" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.pexels.com/photos/12178592/pexels-photo-12178592.jpeg"/>
-         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Hudson Valley Estate</span>
-          <h4 class="font-serif text-lg font-bold">Olivia &amp; Marcus</h4>
-          <p class="text-xs text-white/80 mt-1">The Contemporary Package &bull; Wine Box Capsule</p>
-         </div>
-        </div>
-       </div>
-
-       <!-- Photo 5 -->
-       <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="500">
-        <div class="relative h-72 overflow-hidden">
-         <img alt="Writing custom vows" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.pexels.com/photos/17361439/pexels-photo-17361439.jpeg"/>
-         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Bespoke Ceremony Folio</span>
-          <h4 class="font-serif text-lg font-bold">Julian &amp; Noah</h4>
-          <p class="text-xs text-white/80 mt-1">Signature Custom &bull; Rehearsal Direction Included</p>
-         </div>
-        </div>
-       </div>
-
-       <!-- Photo 6 -->
-       <div class="card group overflow-hidden" data-aos="fade-up" data-aos-delay="600">
-        <div class="relative h-72 overflow-hidden">
-         <img alt="20th anniversary vow renewal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.pexels.com/photos/27268895/pexels-photo-27268895.jpeg"/>
-         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-         <div class="absolute bottom-4 left-4 right-4 text-white">
-          <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Meadowbrook Country Club</span>
-          <h4 class="font-serif text-lg font-bold">Claire &amp; Robert</h4>
-          <p class="text-xs text-white/80 mt-1">20th Vow Renewal &bull; Children Blessing Ring Ceremony</p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
     </section>
 
     <!-- SECTION 7: Sample Script Excerpt Preview -->
     <section class="py-24 bg-brand-primary dark:bg-gray-900 relative">
-     <div class="absolute inset-0 overflow-hidden">
-      <img alt="Romantic background" class="w-full h-full object-cover opacity-10 mix-blend-overlay" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&amp;fit=crop&amp;w=2000&amp;q=80"/>
-     </div>
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-       <div class="order-2 lg:order-1" data-aos="fade-up">
-        <div class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-white/20 text-white shadow-2xl">
-         <i class="w-10 h-10 text-brand-secondary mb-6 opacity-80" data-lucide="quote"></i>
-         <div class="font-serif text-xl md:text-2xl leading-relaxed italic mb-8">
-          "Love does not consist of gazing at each other, but in looking outward together in the same direction. Today, Sarah and Michael stand before us not just to make a promise, but to begin a lifelong adventure of looking outward together..."
-         </div>
-         <div class="flex justify-between items-center border-t border-white/20 pt-6">
-          <span class="text-sm uppercase tracking-wider font-medium text-white/80">
-           Excerpt: Modern Romantic Script
-          </span>
-          <a class="text-brand-secondary hover:text-white transition-colors text-sm font-medium flex items-center gap-2 shrink-0 whitespace-nowrap" href="sample-scripts.html">
-           Read Full Script
-           <i class="w-4 h-4" data-lucide="arrow-right"></i>
-          </a>
-         </div>
-        </div>
-       </div>
-       <div class="order-1 lg:order-2 text-white" data-aos="fade-left">
-        <span class="text-brand-secondary uppercase tracking-widest text-xs font-semibold block mb-2">Artistry in Every Word</span>
-        <h2 class="text-3xl md:text-4xl font-serif mb-6">
-         Words That Resonate For a Lifetime
-        </h2>
-        <p class="text-white/80 mb-8 text-lg font-light leading-relaxed">
-         A great ceremony is built on exceptional writing and confident delivery. We weave your memories, shared inside jokes, and authentic promises into an emotional narrative that captivates your guests and honors your bond.
-        </p>
-        <div class="flex flex-wrap gap-4">
-         <a class="btn-primary bg-white text-brand-primary hover:bg-gray-100" href="sample-scripts.html">
-          View Sample Scripts
-         </a>
-         <a class="btn-secondary text-white border-white hover:bg-white hover:text-brand-primary" href="booking.html">
-          Book an Officiant
-         </a>
-        </div>
-       </div>
+      <div class="absolute inset-0 overflow-hidden">
+        <img alt="Romantic background" class="w-full h-full object-cover opacity-10 mix-blend-overlay"
+          src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" />
       </div>
-     </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1" data-aos="fade-up">
+            <div
+              class="bg-white/10 backdrop-blur-md p-6 sm:p-8 md:p-12 rounded-2xl border border-white/20 text-white shadow-2xl">
+              <i class="w-10 h-10 text-brand-secondary mb-6 opacity-80" data-lucide="quote"></i>
+              <div class="font-serif text-xl md:text-2xl leading-relaxed italic mb-8">
+                "Love does not consist of gazing at each other, but in looking outward together in the same direction.
+                Today, Sarah and Michael stand before us not just to make a promise, but to begin a lifelong adventure
+                of looking outward together..."
+              </div>
+              <div class="script-excerpt-footer flex justify-between items-center border-t border-white/20 pt-6">
+                <span class="text-xs sm:text-sm uppercase tracking-wider font-medium text-white/80">
+                  Excerpt: Modern Romantic Script
+                </span>
+                <a class="text-brand-secondary hover:text-white transition-colors text-sm font-medium flex items-center gap-2 shrink-0 whitespace-nowrap"
+                  href="sample-scripts.html">
+                  Read Full Script
+                  <i class="w-4 h-4" data-lucide="arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 text-white" data-aos="fade-left">
+            <span class="text-brand-light uppercase tracking-widest text-xs font-semibold block mb-2">Artistry in Every
+              Word</span>
+            <h2 class="text-3xl md:text-4xl font-serif mb-6">
+              Words That Resonate For a Lifetime
+            </h2>
+            <p class="text-white/80 mb-8 text-lg font-light leading-relaxed">
+              A great ceremony is built on exceptional writing and confident delivery. We weave your memories, shared
+              inside jokes, and authentic promises into an emotional narrative that captivates your guests and honors
+              your bond.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a class="btn-primary btn-lg bg-white text-brand-primary hover:bg-gray-100" href="sample-scripts.html">
+                View Sample Scripts
+              </a>
+              <a class="btn-secondary btn-lg text-white border-white hover:bg-white hover:text-brand-primary"
+                href="booking.html">
+                Book an Officiant
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECTION 8: Real Couple Testimonials & Final Primary CTAs -->
     <section class="py-24 bg-theme-bg dark:bg-gray-800">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Testimonials -->
-      <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
-       <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">Real Couple Love</span>
-       <h3 class="text-3xl font-serif text-gray-900 dark:text-white mt-1">What Couples Say About EverVow</h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-       <div class="card p-8 bg-white dark:bg-gray-900 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-        <div class="flex gap-1 text-brand-secondary mb-4">
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Testimonials -->
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span class="text-brand-primary dark:text-brand-light font-semibold uppercase tracking-widest text-xs">Real
+            Couple Love</span>
+          <h3 class="text-3xl font-serif text-gray-900 dark:text-white mt-1">What Couples Say About Evervow</h3>
         </div>
-        <p class="text-gray-600 dark:text-gray-300 italic mb-6 flex-grow leading-relaxed">
-         "Our officiant Sarah crafted a ceremony that had our guests laughing one minute and wiping tears the next. Having our script collaborated on beforehand in the dashboard took away all our wedding jitters. It was truly the highlight of our entire wedding day."
-        </p>
-        <div class="flex items-center gap-4">
-         <img alt="Emily &amp; James" class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&amp;auto=format&amp;fit=crop"/>
-         <div>
-          <div class="font-medium text-gray-900 dark:text-white">
-           Emily &amp; James
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+          <div class="card p-8 bg-white dark:bg-gray-900 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex gap-1 text-brand-secondary mb-4">
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 italic mb-6 flex-grow leading-relaxed">
+              "Our officiant Sarah crafted a ceremony that had our guests laughing one minute and wiping tears the next.
+              Having our script collaborated on beforehand in the dashboard took away all our wedding jitters. It was
+              truly the highlight of our entire wedding day."
+            </p>
+            <div class="flex items-center gap-4">
+              <img alt="Emily &amp; James" class="w-12 h-12 rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&amp;auto=format&amp;fit=crop" />
+              <div>
+                <div class="font-medium text-gray-900 dark:text-white">
+                  Emily &amp; James
+                </div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">
+                  Married September 2025 &bull; Signature Package
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-400">
-           Married September 2025 &bull; Signature Package
+          <div class="card p-8 bg-white dark:bg-gray-900 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex gap-1 text-brand-secondary mb-4">
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+              <i class="w-5 h-5 fill-current" data-lucide="star"></i>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 italic mb-6 flex-grow leading-relaxed">
+              "We started by using the script generator to get our outline down, then brought in Evervow to officiate
+              and polish our vows. The result was pure magic. Our families are still telling us it was the most genuine
+              ceremony they've ever attended."
+            </p>
+            <div class="flex items-center gap-4">
+              <img alt="David &amp; Michael" class="w-12 h-12 rounded-full object-cover"
+                src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=100&amp;auto=format&amp;fit=crop" />
+              <div>
+                <div class="font-medium text-gray-900 dark:text-white">
+                  David &amp; Michael
+                </div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">
+                  Married June 2025 &bull; Contemporary Package
+                </div>
+              </div>
+            </div>
           </div>
-         </div>
         </div>
-       </div>
-       <div class="card p-8 bg-white dark:bg-gray-900 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-        <div class="flex gap-1 text-brand-secondary mb-4">
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-         <i class="w-5 h-5 fill-current" data-lucide="star"></i>
-        </div>
-        <p class="text-gray-600 dark:text-gray-300 italic mb-6 flex-grow leading-relaxed">
-         "We started by using the script generator to get our outline down, then brought in EverVow to officiate and polish our vows. The result was pure magic. Our families are still telling us it was the most genuine ceremony they've ever attended."
-        </p>
-        <div class="flex items-center gap-4">
-         <img alt="David &amp; Michael" class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=100&amp;auto=format&amp;fit=crop"/>
-         <div>
-          <div class="font-medium text-gray-900 dark:text-white">
-           David &amp; Michael
-          </div>
-          <div class="text-xs text-gray-500 dark:text-gray-400">
-           Married June 2025 &bull; Contemporary Package
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
 
-      <!-- Final Master CTA with clear user actions -->
-      <div class="text-center max-w-4xl mx-auto p-10 md:p-14 rounded-3xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-xl" data-aos="zoom-in">
-       <i class="w-12 h-12 text-brand-primary dark:text-brand-light mx-auto mb-6" data-lucide="heart"></i>
-       <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mb-4">
-        Ready to Create Your Ceremony Experience?
-       </h2>
-       <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
-        Choose your path: compare full wedding packages, generate and customize your bespoke ceremony script, or book your dedicated licensed officiant today.
-       </p>
-       
-       <div class="flex flex-wrap justify-center gap-4">
-        <a class="btn-primary text-base px-6 py-3.5 shadow-lg" href="booking.html">
-         <i class="w-4 h-4 mr-2" data-lucide="calendar"></i>
-         Book an Officiant
-        </a>
-        <a class="btn-secondary text-base px-6 py-3.5" href="booking.html">
-         <i class="w-4 h-4 mr-2" data-lucide="sliders"></i>
-         Customize Your Ceremony
-        </a>
-        <a class="btn-secondary text-base px-6 py-3.5" href="services.html">
-         <i class="w-4 h-4 mr-2" data-lucide="layers"></i>
-         Explore Wedding Packages
-        </a>
-        <a class="btn-secondary text-base px-6 py-3.5" href="sample-scripts.html">
-         <i class="w-4 h-4 mr-2" data-lucide="file-text"></i>
-         View Sample Scripts
-        </a>
-       </div>
+        <!-- Final Master CTA with clear user actions -->
+        <div
+          class="text-center max-w-4xl mx-auto p-10 md:p-14 rounded-3xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-xl"
+          data-aos="zoom-in">
+          <i class="w-12 h-12 text-brand-primary dark:text-brand-light mx-auto mb-6" data-lucide="heart"></i>
+          <h2 class="text-3xl md:text-5xl font-serif text-gray-900 dark:text-white mb-4">
+            Ready to Create Your Ceremony Experience?
+          </h2>
+          <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
+            Choose your path: compare full wedding packages, generate and customize your bespoke ceremony script, or
+            book your dedicated licensed officiant today.
+          </p>
 
-       <div class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-wrap justify-center items-center gap-8 text-xs text-gray-500 dark:text-gray-400">
-        <span class="flex items-center gap-2">
-         <i class="w-4 h-4 text-emerald-500" data-lucide="calendar"></i>
-         2026/2027 Wedding Calendar Open
-        </span>
-        <span class="flex items-center gap-2">
-         <i class="w-4 h-4 text-emerald-500" data-lucide="shield-check"></i>
-         Ordained &amp; Certified Officiants
-        </span>
-        <span class="flex items-center gap-2">
-         <i class="w-4 h-4 text-emerald-500" data-lucide="sparkles"></i>
-         Free 20-Minute Discovery Consultation
-        </span>
-       </div>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a class="btn-primary btn-lg shadow-lg" href="booking.html">
+              Book an Officiant
+            </a>
+            <a class="btn-secondary btn-lg" href="booking.html">
+              Customize Your Ceremony
+            </a>
+            <a class="btn-secondary btn-lg" href="services.html">
+              Explore Wedding Packages
+            </a>
+            <a class="btn-secondary btn-lg" href="sample-scripts.html">
+              View Sample Scripts
+            </a>
+          </div>
+
+          <div
+            class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-wrap justify-center items-center gap-8 text-xs text-gray-500 dark:text-gray-400">
+            <span class="flex items-center gap-2">
+              <i class="w-4 h-4 text-emerald-500" data-lucide="calendar"></i>
+              2026/2027 Wedding Calendar Open
+            </span>
+            <span class="flex items-center gap-2">
+              <i class="w-4 h-4 text-emerald-500" data-lucide="shield-check"></i>
+              Ordained &amp; Certified Officiants
+            </span>
+            <span class="flex items-center gap-2">
+              <i class="w-4 h-4 text-emerald-500" data-lucide="sparkles"></i>
+              Free 20-Minute Discovery Consultation
+            </span>
+          </div>
+        </div>
       </div>
-     </div>
     </section>
-   </main>
+  </main>
   <!-- FOOTER (Global) -->
   <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-     <!-- Brand -->
-     <div>
-      <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity mb-6" href="index.html">
-       <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
-       </i>
-       <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        EverVow
-       </span>
-      </a>
-      <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
-       Premium officiant and ceremony scripting services crafting personalized, elegant, and unforgettable wedding ceremonies.
-      </p>
-      <div class="flex gap-4">
-       <a aria-label="Instagram" class="text-[#E1306C] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-80" href="#">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-         <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
-         </rect>
-         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
-         </path>
-         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
-         </line>
-        </svg>
-       </a>
-       <a aria-label="Facebook" class="text-[#1877F2] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-80" href="#">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
-         </path>
-        </svg>
-       </a>
-       <a aria-label="YouTube" class="text-[#FF0000] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-80" href="#">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
-         </path>
-         <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02">
-         </polygon>
-        </svg>
-       </a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Brand -->
+        <div>
+          <a class="flex-shrink-0 inline-flex items-center gap-2 hover:opacity-80 transition-opacity mb-6"
+            href="index.html">
+            <i class="w-8 h-8 text-brand-primary dark:text-brand-light" data-lucide="feather">
+            </i>
+            <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Evervow
+            </span>
+          </a>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+            Premium officiant and ceremony scripting services crafting personalized, elegant, and unforgettable wedding
+            ceremonies.
+          </p>
+          <div class="flex gap-4">
+            <a aria-label="Instagram"
+              class="text-[#E1306C] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-80"
+              href="#">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewbox="0 0 24 24">
+                <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
+                </rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+                </path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
+                </line>
+              </svg>
+            </a>
+            <a aria-label="Facebook"
+              class="text-[#1877F2] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-80"
+              href="#">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewbox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                </path>
+              </svg>
+            </a>
+            <a aria-label="YouTube"
+              class="text-[#FF0000] transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-80"
+              href="#">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" viewbox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02">
+                </polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
+            Explore
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors"
+                href="about.html">
+                Our Story
+              </a>
+            </li>
+            <li>
+              <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors"
+                href="services.html">
+                Services &amp; Pricing
+              </a>
+            </li>
+            <li>
+              <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors"
+                href="ceremony-styles.html">
+                Ceremony Styles
+              </a>
+            </li>
+            <li>
+              <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors"
+                href="sample-scripts.html">
+                Sample Scripts
+              </a>
+            </li>
+            <li>
+              <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors"
+                href="login.html">
+                Couple Login
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
+            Contact
+          </h4>
+          <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-3">
+              <i class="w-5 h-5 text-brand-primary dark:text-brand-light shrink-0" data-lucide="map-pin">
+              </i>
+              <span>
+                123 Wedding Lane, Suite 100
+                <br />
+                New York, NY 10001
+              </span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="w-5 h-5 text-brand-primary dark:text-brand-light shrink-0" data-lucide="phone">
+              </i>
+              <span>
+                +1 (555) 123-4567
+              </span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="w-5 h-5 text-brand-primary dark:text-brand-light shrink-0" data-lucide="mail">
+              </i>
+              <a class="hover:text-brand-primary" href="mailto:hello@evervow.example.com">
+                hello@evervow.example.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div>
+          <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
+            Newsletter
+          </h4>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            Subscribe for ceremony inspiration and vow writing tips.
+          </p>
+          <form class="flex gap-2" onsubmit="event.preventDefault();">
+            <input
+              class="w-full px-4 py-2 text-sm border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary dark:bg-gray-800 dark:text-white"
+              placeholder="Your email address" required="" type="email" />
+            <button class="btn-primary btn-sm px-4" type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
       </div>
-     </div>
-     <!-- Quick Links -->
-     <div>
-      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
-       Explore
-      </h4>
-      <ul class="space-y-3 text-sm">
-       <li>
-        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="about.html">
-         Our Story
-        </a>
-       </li>
-       <li>
-        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="services.html">
-         Services &amp; Pricing
-        </a>
-       </li>
-       <li>
-        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="ceremony-styles.html">
-         Ceremony Styles
-        </a>
-       </li>
-       <li>
-        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="sample-scripts.html">
-         Sample Scripts
-        </a>
-       </li>
-       <li>
-        <a class="text-gray-600 dark:text-gray-400 hover:text-brand-primary dark:hover:text-white transition-colors" href="login.html">
-         Couple Login
-        </a>
-       </li>
-      </ul>
-     </div>
-     <!-- Contact -->
-     <div>
-      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
-       Contact
-      </h4>
-      <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-       <li class="flex items-start gap-3">
-        <i class="w-5 h-5 text-brand-primary dark:text-brand-light shrink-0" data-lucide="map-pin">
-        </i>
-        <span>
-         123 Wedding Lane, Suite 100
-         <br/>
-         New York, NY 10001
-        </span>
-       </li>
-       <li class="flex items-center gap-3">
-        <i class="w-5 h-5 text-brand-primary dark:text-brand-light shrink-0" data-lucide="phone">
-        </i>
-        <span>
-         +1 (555) 123-4567
-        </span>
-       </li>
-       <li class="flex items-center gap-3">
-        <i class="w-5 h-5 text-brand-primary dark:text-brand-light shrink-0" data-lucide="mail">
-        </i>
-        <a class="hover:text-brand-primary" href="mailto:hello@evervow.example.com">
-         hello@evervow.example.com
-        </a>
-       </li>
-      </ul>
-     </div>
-     <!-- Newsletter -->
-     <div>
-      <h4 class="font-serif text-lg text-gray-900 dark:text-white mb-6">
-       Newsletter
-      </h4>
-      <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-       Subscribe for ceremony inspiration and vow writing tips.
-      </p>
-      <form class="flex gap-2" onsubmit="event.preventDefault();">
-       <input class="w-full px-4 py-2 text-sm border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary dark:bg-gray-800 dark:text-white" placeholder="Your email address" required="" type="email"/>
-       <button class="btn-primary px-4 py-2" type="submit">
-        Subscribe
-       </button>
-      </form>
-     </div>
+      <div
+        class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+        <p>
+          &copy;&copy; 2026 Evervow Officiant Services. All rights reserved.
+        </p>
+        <div class="flex gap-4 items-center">
+          <a class="hover:text-brand-primary transition-colors" href="#">
+            Privacy Policy
+          </a>
+          <a class="hover:text-brand-primary transition-colors" href="#">
+            Terms of Service
+          </a>
+          <button aria-label="Back to top"
+            class="ml-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-brand-primary dark:hover:bg-brand-primary hover:text-white transition-colors focus:outline-none"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
+            <i class="w-4 h-4" data-lucide="arrow-up">
+            </i>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-     <p>
-      Â© 2026 EverVow Officiant Services. All rights reserved.
-     </p>
-     <div class="flex gap-4 items-center">
-      <a class="hover:text-brand-primary transition-colors" href="#">
-       Privacy Policy
-      </a>
-      <a class="hover:text-brand-primary transition-colors" href="#">
-       Terms of Service
-      </a>
-      <button aria-label="Back to top" class="ml-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-brand-primary dark:hover:bg-brand-primary hover:text-white transition-colors focus:outline-none" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">
-       <i class="w-4 h-4" data-lucide="arrow-up">
-       </i>
-      </button>
-     </div>
-    </div>
-   </div>
   </footer>
   <!-- Init Icons & Script Generator Logic -->
   <script>
-   lucide.createIcons();
+    lucide.createIcons();
 
-   // Interactive Wedding Script Generator Logic
-   window.currentGenLength = 25;
-   
-   window.setGenLength = function(len, btn) {
-     window.currentGenLength = len;
-     document.querySelectorAll('.gen-len-btn').forEach(b => {
-       b.classList.remove('border-brand-primary', 'bg-brand-primary', 'text-white');
-       b.classList.add('border-gray-300', 'dark:border-gray-600', 'bg-theme-bg', 'dark:bg-gray-900', 'dark:text-white');
-     });
-     btn.classList.remove('border-gray-300', 'dark:border-gray-600', 'bg-theme-bg', 'dark:bg-gray-900');
-     btn.classList.add('border-brand-primary', 'bg-brand-primary', 'text-white');
-     window.generateHeroScript();
-   };
+    // Interactive Wedding Script Generator Logic
+    window.currentGenLength = 25;
 
-   window.generateHeroScript = function() {
-     const p1 = document.getElementById('gen-partner1').value.trim() || 'Partner 1';
-     const p2 = document.getElementById('gen-partner2').value.trim() || 'Partner 2';
-     const tone = document.getElementById('gen-tone').value;
-     const ritual = document.getElementById('gen-ritual').value;
-     const len = window.currentGenLength || 25;
+    window.setGenLength = function (len, btn) {
+      window.currentGenLength = len;
+      document.querySelectorAll('.gen-len-btn').forEach(b => {
+        b.classList.remove('border-brand-primary', 'bg-brand-primary', 'text-white');
+        b.classList.add('border-gray-300', 'dark:border-gray-600', 'bg-theme-bg', 'dark:bg-gray-900', 'dark:text-white');
+      });
+      btn.classList.remove('border-gray-300', 'dark:border-gray-600', 'bg-theme-bg', 'dark:bg-gray-900');
+      btn.classList.add('border-brand-primary', 'bg-brand-primary', 'text-white');
+      window.generateHeroScript();
+    };
 
-     const titleEl = document.getElementById('gen-output-title');
-     const metaEl = document.getElementById('gen-output-meta');
-     const badgeEl = document.getElementById('gen-script-badge');
-     const bodyEl = document.getElementById('gen-output-body');
+    window.generateHeroScript = function () {
+      const p1 = document.getElementById('gen-partner1').value.trim() || 'Partner 1';
+      const p2 = document.getElementById('gen-partner2').value.trim() || 'Partner 2';
+      const tone = document.getElementById('gen-tone').value;
+      const ritual = document.getElementById('gen-ritual').value;
+      const len = window.currentGenLength || 25;
 
-     titleEl.textContent = `The Celebration of ${p1} & ${p2}`;
+      const titleEl = document.getElementById('gen-output-title');
+      const metaEl = document.getElementById('gen-output-meta');
+      const badgeEl = document.getElementById('gen-script-badge');
+      const bodyEl = document.getElementById('gen-output-body');
 
-     let toneLabel = "Secular & Contemporary";
-     let welcomeText = `"Family, friends, and loved ones: Welcome. We gather here beneath this open sky to witness the declaration of marriage between ${p1} and ${p2}. In a fast-moving world, today is a sacred pause to celebrate deliberate, everyday love."`;
-     let storyText = `"Their journey did not start with grand grandiloquence, but with quiet compatibility, shared laughter, and an unshakable respect for each other's individuality. From their first shared adventure to building a life together, every step brought them toward this arch."`;
-     let vowsText = `"'${p1}, I promise to choose you every day, in triumph and challenge, to listen without defense, and to grow beside you.' / '${p2}, with this ring, I promise you my honest heart, unconditional support, and lifelong partnership.'"`;
+      titleEl.textContent = `The Celebration of ${p1} & ${p2}`;
 
-     if (tone === 'traditional') {
-       toneLabel = "Traditional & Classic Reverence";
-       welcomeText = `"Dearly beloved, we are gathered together here in the presence of this company to join together ${p1} and ${p2} in holy matrimony; an honorable estate, not by any to be entered into unadvisedly or lightly, but reverently and discreetly."`;
-       storyText = `"Marriage is a timeless institution built upon mutual duty, enduring fidelity, and deep respect. ${p1} and ${p2} come forward today honoring the traditions of their families and the sacred commitment of two lives becoming one."`;
-       vowsText = `"'${p1}, do you take ${p2} to be your wedded partner, to have and to hold from this day forward, for better, for worse, in sickness and in health?' / 'I do.' / '${p2}, do you take ${p1}...?' / 'I do.'"`;
-     } else if (tone === 'lighthearted') {
-       toneLabel = "Warm, Joyful & Storytelling";
-       welcomeText = `"Welcome everyone! If you know ${p1} and ${p2}, you know there is nothing they love more than bringing their favorite people together for good food, genuine belly-laughs, and great memories. Today, they've invited you to witness the biggest promise of their lives."`;
-       storyText = `"Now, if you ask ${p2} how they met, you'll get the cinematic version. If you ask ${p1}, you'll hear about someone almost missing their train or spilling coffee! But beyond the comedy was an instant realization: they were simply better, funnier, and happier together."`;
-       vowsText = `"'${p1}, I promise to always laugh at your jokes—especially the bad ones—to share the last slice of pizza, and to be your fiercest champion through every adventure.' / '${p2}, I promise to keep you grounded, to hold your hand through every unknown, and to love you unconditionally every single day.'"`;
-     } else if (tone === 'elopement') {
-       toneLabel = "Intimate & Poetic Elopement";
-       welcomeText = `"In this quiet, breathtaking place, stripped of distractions and guest lists, ${p1} and ${p2} stand face to face. Just the two of you, the wind, and the undeniable truth of what you mean to one another."`;
-       storyText = `"You chose this path because your love does not need an audience to be profound. What matters is the quiet certainty in your eyes and the promises you make today for all your tomorrows."`;
-       vowsText = `"'${p1}, looking into your eyes right now, there is nowhere else on earth I'd rather be. You are my home, my anchor, and my greatest joy.' / '${p2}, I give you my whole self, today and in every dawn that follows.'"`;
-     }
+      let toneLabel = "Secular & Contemporary";
+      let welcomeText = `"Family, friends, and loved ones: Welcome. We gather here beneath this open sky to witness the declaration of marriage between ${p1} and ${p2}. In a fast-moving world, today is a sacred pause to celebrate deliberate, everyday love."`;
+      let storyText = `"Their journey did not start with grand grandiloquence, but with quiet compatibility, shared laughter, and an unshakable respect for each other's individuality. From their first shared adventure to building a life together, every step brought them toward this arch."`;
+      let vowsText = `"'${p1}, I promise to choose you every day, in triumph and challenge, to listen without defense, and to grow beside you.' / '${p2}, with this ring, I promise you my honest heart, unconditional support, and lifelong partnership.'"`;
 
-     let ritualName = "Handfasting";
-     let ritualText = `"Officiant binds ${p1}'s and ${p2}'s hands with intertwined cords: 'These are the hands that hold you in joy, the hands that steady you in adversity, and the hands that weave your days into a shared masterpiece.' (${p1} and ${p2} gently tie the Celtic knot)."`;
+      if (tone === 'traditional') {
+        toneLabel = "Traditional & Classic Reverence";
+        welcomeText = `"Dearly beloved, we are gathered together here in the presence of this company to join together ${p1} and ${p2} in holy matrimony; an honorable estate, not by any to be entered into unadvisedly or lightly, but reverently and discreetly."`;
+        storyText = `"Marriage is a timeless institution built upon mutual duty, enduring fidelity, and deep respect. ${p1} and ${p2} come forward today honoring the traditions of their families and the sacred commitment of two lives becoming one."`;
+        vowsText = `"'${p1}, do you take ${p2} to be your wedded partner, to have and to hold from this day forward, for better, for worse, in sickness and in health?' / 'I do.' / '${p2}, do you take ${p1}...?' / 'I do.'"`;
+      } else if (tone === 'lighthearted') {
+        toneLabel = "Warm, Joyful & Storytelling";
+        welcomeText = `"Welcome everyone! If you know ${p1} and ${p2}, you know there is nothing they love more than bringing their favorite people together for good food, genuine belly-laughs, and great memories. Today, they've invited you to witness the biggest promise of their lives."`;
+        storyText = `"Now, if you ask ${p2} how they met, you'll get the cinematic version. If you ask ${p1}, you'll hear about someone almost missing their train or spilling coffee! But beyond the comedy was an instant realization: they were simply better, funnier, and happier together."`;
+        vowsText = `"'${p1}, I promise to always laugh at your jokes—especially the bad ones—to share the last slice of pizza, and to be your fiercest champion through every adventure.' / '${p2}, I promise to keep you grounded, to hold your hand through every unknown, and to love you unconditionally every single day.'"`;
+      } else if (tone === 'elopement') {
+        toneLabel = "Intimate & Poetic Elopement";
+        welcomeText = `"In this quiet, breathtaking place, stripped of distractions and guest lists, ${p1} and ${p2} stand face to face. Just the two of you, the wind, and the undeniable truth of what you mean to one another."`;
+        storyText = `"You chose this path because your love does not need an audience to be profound. What matters is the quiet certainty in your eyes and the promises you make today for all your tomorrows."`;
+        vowsText = `"'${p1}, looking into your eyes right now, there is nowhere else on earth I'd rather be. You are my home, my anchor, and my greatest joy.' / '${p2}, I give you my whole self, today and in every dawn that follows.'"`;
+      }
 
-     if (ritual === 'candle') {
-       ritualName = "Unity Candle Lighting";
-       ritualText = `"${p1} and ${p2} each take an individual taper candle representing their separate lives and families. Together, they light the center unity pillar: 'As these two flames merge into one bright light, may your shared flame shine with strength, patience, and warmth.'"`;
-     } else if (ritual === 'wine') {
-       ritualName = "Love Letter & Wine Capsule";
-       ritualText = `"${p1} and ${p2} place handwritten love letters and an anniversary bottle of vintage wine into a handcrafted wooden box, securing it with brass nails: 'To be opened on your 10th anniversary, or whenever life calls for a reminder of why you made these vows today.'"`;
-     } else if (ritual === 'sand') {
-       ritualName = "Blending of Sands";
-       ritualText = `"Pouring complementary colors of sand into a single crystal vessel: 'Just as these distinct grains of sand can never again be separated, so may your lives and spirits be forever intertwined.'"`;
-     } else if (ritual === 'none') {
-       ritualName = "Pure Spoken Vows";
-       ritualText = `"With no distractions or props, ${p1} and ${p2} join hands and look into each other's eyes for their personal pledge of fidelity and lifelong devotion."`;
-     }
+      let ritualName = "Handfasting";
+      let ritualText = `"Officiant binds ${p1}'s and ${p2}'s hands with intertwined cords: 'These are the hands that hold you in joy, the hands that steady you in adversity, and the hands that weave your days into a shared masterpiece.' (${p1} and ${p2} gently tie the Celtic knot)."`;
 
-     badgeEl.textContent = `${toneLabel} Script Outline`;
-     metaEl.textContent = `Approx. Duration: ${len} Minutes • Style: ${toneLabel} • Ritual: ${ritualName}`;
+      if (ritual === 'candle') {
+        ritualName = "Unity Candle Lighting";
+        ritualText = `"${p1} and ${p2} each take an individual taper candle representing their separate lives and families. Together, they light the center unity pillar: 'As these two flames merge into one bright light, may your shared flame shine with strength, patience, and warmth.'"`;
+      } else if (ritual === 'wine') {
+        ritualName = "Love Letter & Wine Capsule";
+        ritualText = `"${p1} and ${p2} place handwritten love letters and an anniversary bottle of vintage wine into a handcrafted wooden box, securing it with brass nails: 'To be opened on your 10th anniversary, or whenever life calls for a reminder of why you made these vows today.'"`;
+      } else if (ritual === 'sand') {
+        ritualName = "Blending of Sands";
+        ritualText = `"Pouring complementary colors of sand into a single crystal vessel: 'Just as these distinct grains of sand can never again be separated, so may your lives and spirits be forever intertwined.'"`;
+      } else if (ritual === 'none') {
+        ritualName = "Pure Spoken Vows";
+        ritualText = `"With no distractions or props, ${p1} and ${p2} join hands and look into each other's eyes for their personal pledge of fidelity and lifelong devotion."`;
+      }
 
-     bodyEl.innerHTML = `
+      badgeEl.textContent = `${toneLabel} Script Outline`;
+      metaEl.textContent = `Approx. Duration: ${len} Minutes • Style: ${toneLabel} • Ritual: ${ritualName}`;
+
+      bodyEl.innerHTML = `
       <div>
        <span class="font-sans font-bold text-xs uppercase tracking-wider text-brand-primary dark:text-brand-light block mb-1">I. The Welcome & Community Blessing</span>
        <p class="italic text-gray-700 dark:text-gray-300">${welcomeText}</p>
@@ -1274,12 +1546,10 @@
        <p class="italic text-gray-700 dark:text-gray-300">"By the power vested in me and celebrated by all who cherish you, I pronounce you united in marriage. You may seal this sacred vow with a kiss!"</p>
       </div>
      `;
-   };
+    };
   </script>
   <script src="assets/js/main.js">
   </script>
- </body>
+</body>
+
 </html>
-
-
-
