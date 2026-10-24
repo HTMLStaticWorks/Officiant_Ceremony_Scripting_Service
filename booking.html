@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="scroll-smooth overflow-x-hidden" lang="en">
  <head>
   <meta charset="utf-8"/>
@@ -132,8 +132,7 @@
        </i>
       </button>
       <button class="rtl-toggle text-sm font-medium hover:text-brand-primary">
-       <i class="w-5 h-5" data-lucide="arrow-left-right">
-       </i>
+       <i data-lucide="arrow-left-right" class="w-5 h-5 rtl-icon"></i>
       </button>
       <a class="btn-primary btn-nav" href="signup.html">
        Signup
@@ -141,8 +140,7 @@
      </div>
            <div class="flex xl:hidden items-center gap-4">
        <button aria-label="Toggle RTL" class="rtl-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-        <i class="w-5 h-5" data-lucide="arrow-left-right">
-        </i>
+        <i data-lucide="arrow-left-right" class="w-5 h-5 rtl-icon"></i>
        </button>
        <button aria-label="Toggle Dark Mode" class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
         <i class="w-5 h-5" data-lucide="moon">
@@ -278,112 +276,29 @@
       </p>
      </div>
      <div class="card p-6 md:p-10" data-aos="fade-up">
-      <!-- Placeholder for Calendar UI -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-       <div>
-        <div class="flex justify-between items-center mb-6">
-         <button class="text-gray-400 hover:text-brand-primary">
-          <i data-lucide="chevron-left">
-          </i>
-         </button>
-         <h4 class="font-medium text-gray-900 dark:text-white">
-          October 2026
-         </h4>
-         <button class="text-gray-400 hover:text-brand-primary">
-          <i data-lucide="chevron-right">
-          </i>
-         </button>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+         <div class="flex justify-between items-center mb-6">
+          <button aria-label="Previous month" class="w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:text-brand-primary hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors" id="cal-prev" type="button">
+           <i data-lucide="chevron-left"></i>
+          </button>
+          <h4 class="font-medium text-gray-900 dark:text-white" id="cal-month-label"></h4>
+          <button aria-label="Next month" class="w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:text-brand-primary hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors" id="cal-next" type="button">
+           <i data-lucide="chevron-right"></i>
+          </button>
+         </div>
+         <div class="grid grid-cols-7 gap-2 text-center text-sm mb-2 text-gray-400">
+          <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+         </div>
+         <div class="grid grid-cols-7 gap-2 text-center text-sm" id="cal-days"></div>
+         <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">Sundays and past dates are unavailable.</p>
         </div>
-        <div class="grid grid-cols-7 gap-2 text-center text-sm mb-2">
-         <div class="text-gray-400">
-          Su
-         </div>
-         <div class="text-gray-400">
-          Mo
-         </div>
-         <div class="text-gray-400">
-          Tu
-         </div>
-         <div class="text-gray-400">
-          We
-         </div>
-         <div class="text-gray-400">
-          Th
-         </div>
-         <div class="text-gray-400">
-          Fr
-         </div>
-         <div class="text-gray-400">
-          Sa
-         </div>
-        </div>
-        <div class="grid grid-cols-7 gap-2 text-center text-sm">
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          27
-         </div>
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          28
-         </div>
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          29
-         </div>
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          30
-         </div>
-         <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full cursor-pointer">
-          1
-         </div>
-         <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full cursor-pointer">
-          2
-         </div>
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          3
-         </div>
-         <!-- Week 2 -->
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          4
-         </div>
-         <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full cursor-pointer">
-          5
-         </div>
-         <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full cursor-pointer">
-          6
-         </div>
-         <div class="p-2 bg-brand-primary text-white rounded-full font-bold shadow-md cursor-pointer">
-          7
-         </div>
-         <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full cursor-pointer">
-          8
-         </div>
-         <div class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full cursor-pointer">
-          9
-         </div>
-         <div class="p-2 text-gray-300 dark:text-gray-600">
-          10
-         </div>
-         <!-- Partial week just for illustration -->
+        <div class="border-t md:border-t-0 md:border-l border-gray-100 dark:border-gray-700 pt-6 md:pt-0 md:pl-12">
+         <h4 class="font-medium text-gray-900 dark:text-white mb-6" id="cal-times-label">Available Times</h4>
+         <div class="space-y-3" id="cal-times"></div>
+         <p class="mt-6 text-sm text-brand-primary dark:text-brand-light font-medium hidden" id="cal-summary"></p>
         </div>
        </div>
-       <div class="border-t md:border-t-0 md:border-l border-gray-100 dark:border-gray-700 pt-6 md:pt-0 md:pl-12">
-        <h4 class="font-medium text-gray-900 dark:text-white mb-6">
-         Available Times for Oct 7
-        </h4>
-        <div class="space-y-3">
-         <button class="w-full py-3 border border-gray-200 dark:border-gray-700 rounded-md text-sm hover:border-brand-primary text-gray-700 dark:text-gray-300 transition-colors">
-          10:00 AM
-         </button>
-         <button class="w-full py-3 border border-gray-200 dark:border-gray-700 rounded-md text-sm hover:border-brand-primary text-gray-700 dark:text-gray-300 transition-colors">
-          1:30 PM
-         </button>
-         <button class="w-full py-3 border border-brand-primary bg-brand-primary/10 rounded-md text-sm text-brand-primary dark:text-brand-light transition-colors font-medium">
-          3:00 PM
-         </button>
-         <button class="w-full py-3 border border-gray-200 dark:border-gray-700 rounded-md text-sm hover:border-brand-primary text-gray-700 dark:text-gray-300 transition-colors">
-          4:45 PM
-         </button>
-        </div>
-       </div>
-      </div>
      </div>
     </div>
    </section>
@@ -490,7 +405,7 @@
        Request Received!
       </h2>
       <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
-       Thank you! We've received your consultation request for October 7, 2026 at 3:00 PM. A calendar invite has been sent to your email.
+       Thank you! We've received your consultation request for <span id="confirm-slot">October 7, 2026 at 3:00 PM</span>. A calendar invite has been sent to your email.
       </p>
       <div class="card p-6 bg-theme-bg dark:bg-gray-900 inline-block text-left mb-8">
        <h4 class="font-medium text-gray-900 dark:text-white mb-4">
@@ -662,6 +577,91 @@
    </div>
   </footer>
   <script>
+   (function () {
+     const ALL_SLOTS = ['9:30 AM', '10:00 AM', '11:30 AM', '1:30 PM', '3:00 PM', '4:45 PM', '6:00 PM'];
+     const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+     const today = new Date(); today.setHours(0,0,0,0);
+     const minMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+     const maxMonth = new Date(today.getFullYear(), today.getMonth() + 6, 1);
+     let view = new Date(minMonth);
+     let selDate = null, selTime = null;
+
+     const $ = id => document.getElementById(id);
+     const daysEl = $('cal-days'), timesEl = $('cal-times');
+
+     const isAvailable = d => d >= today && d.getDay() !== 0;
+     const slotsFor = d => ALL_SLOTS.filter((_, i) => (d.getDate() * 7 + i * 3) % 5 !== 0);
+     const fmt = d => `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+
+     function firstAvailable() {
+       const d = new Date(today);
+       while (!isAvailable(d)) d.setDate(d.getDate() + 1);
+       return d;
+     }
+
+     function renderDays() {
+       $('cal-month-label').textContent = `${MONTHS[view.getMonth()]} ${view.getFullYear()}`;
+       $('cal-prev').disabled = view <= minMonth;
+       $('cal-next').disabled = view >= maxMonth;
+       daysEl.innerHTML = '';
+       const startPad = view.getDay();
+       const daysInMonth = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+       for (let i = 0; i < startPad; i++) daysEl.appendChild(document.createElement('div'));
+       for (let day = 1; day <= daysInMonth; day++) {
+         const d = new Date(view.getFullYear(), view.getMonth(), day);
+         const btn = document.createElement('button');
+         btn.type = 'button';
+         btn.textContent = day;
+         const selected = selDate && d.getTime() === selDate.getTime();
+         const isToday = d.getTime() === today.getTime();
+         if (!isAvailable(d)) {
+           btn.disabled = true;
+           btn.className = 'w-9 h-9 mx-auto rounded-full text-gray-300 dark:text-gray-600 cursor-not-allowed';
+         } else if (selected) {
+           btn.className = 'w-9 h-9 mx-auto rounded-full bg-brand-primary text-white font-bold shadow-md';
+         } else {
+           btn.className = 'w-9 h-9 mx-auto rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors' + (isToday ? ' ring-1 ring-brand-primary' : '');
+         }
+         btn.setAttribute('aria-label', fmt(d));
+         btn.addEventListener('click', () => { selDate = d; selTime = null; renderDays(); renderTimes(); });
+         daysEl.appendChild(btn);
+       }
+     }
+
+     function renderTimes() {
+       timesEl.innerHTML = '';
+       if (!selDate) { $('cal-times-label').textContent = 'Select a date'; return; }
+       $('cal-times-label').textContent = `Available Times for ${MONTHS[selDate.getMonth()].slice(0,3)} ${selDate.getDate()}`;
+       slotsFor(selDate).forEach(t => {
+         const b = document.createElement('button');
+         b.type = 'button';
+         b.textContent = t;
+         b.className = t === selTime
+           ? 'w-full py-3 border border-brand-primary bg-brand-primary text-white rounded-md text-sm font-medium transition-colors'
+           : 'w-full py-3 border border-gray-200 dark:border-gray-700 rounded-md text-sm hover:border-brand-primary text-gray-700 dark:text-gray-300 transition-colors';
+         b.addEventListener('click', () => { selTime = t; renderTimes(); });
+         timesEl.appendChild(b);
+       });
+       const summary = $('cal-summary');
+       if (selTime) {
+         const text = `${fmt(selDate)} at ${selTime}`;
+         summary.textContent = `Selected: ${text}`;
+         summary.classList.remove('hidden');
+         $('confirm-slot').textContent = text;
+       } else {
+         summary.classList.add('hidden');
+       }
+     }
+
+     $('cal-prev').addEventListener('click', () => { view.setMonth(view.getMonth() - 1); renderDays(); });
+     $('cal-next').addEventListener('click', () => { view.setMonth(view.getMonth() + 1); renderDays(); });
+
+     selDate = firstAvailable();
+     selTime = slotsFor(selDate)[0];
+     view = new Date(selDate.getFullYear(), selDate.getMonth(), 1);
+     renderDays();
+     renderTimes();
+   })();
    lucide.createIcons();
   </script>
   <script src="assets/js/main.js">

@@ -40,6 +40,15 @@
   border-bottom: 1px solid rgba(55, 65, 81, 0.5);
 }
 
+/* RTL Toggle Icon */
+.rtl-icon {
+  display: block;
+  transition: transform 0.3s ease;
+}
+[dir="rtl"] .rtl-icon {
+  transform: scaleX(-1);
+}
+
 /* Mobile Hero Text Legibility Enhancement */
 @media (max-width: 768px) {
   .hero-mobile-legible {
@@ -68,6 +77,19 @@ html.dark ::-webkit-scrollbar-track {
 /* ==========================================================================
    UNIFIED CTA & BUTTON SYSTEM (Identical Same Size Across All Pages & Views)
    ========================================================================== */
+
+
+/* Ensure button text and icons never wrap to second line */
+.btn-primary *,
+.btn-secondary *,
+.cta-equal *,
+.btn-hero *,
+.btn-nav *,
+button[class*="btn-"] *,
+a[class*="btn-"] * {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+}
 
 .btn-primary,
 .btn-secondary,
@@ -118,6 +140,15 @@ html.dark ::-webkit-scrollbar-track {
     padding-right: 1.75rem !important;
     font-size: 0.9375rem !important;
   }
+}
+
+/* Pricing card CTA — standard single-line button */
+.pricing-card-cta {
+  white-space: nowrap !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  line-height: 48px !important;
 }
 
 /* Primary Button Styling */
@@ -292,9 +323,11 @@ button.btn-secondary.border-white:hover {
   .flex-col.sm\:flex-row.gap-4.justify-center > .btn-secondary,
   .flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-primary,
   .flex-col.sm\:flex-row.gap-4.justify-center.items-center > .btn-secondary {
-    width: 250px !important;
-    min-width: 250px !important;
-    max-width: 250px !important;
+    min-width: 240px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
     font-size: 0.875rem !important;
